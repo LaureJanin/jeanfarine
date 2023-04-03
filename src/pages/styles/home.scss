@@ -1,0 +1,26 @@
+.slider {
+    height: 30rem;
+    width: 90vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1rem;
+    background-image: url("https://images.pexels.com/photos/1006965/pexels-photo-1006965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size:cover;
+    border-radius: 5px;
+    animation: myAnimation alternate infinite 14s;
+    -webkit-animation: myAnimation alternate infinite 14s;
+    -moz-animation: myAnimation alternate infinite 14s;
+    -ms-animation: myAnimation alternate infinite 14s;
+    -o-animation: myAnimation alternate infinite 14s;
+  }
+  @keyframes myAnimation {
+    33.33% {
+      background-image: url("https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    }
+    66.66% {
+      background-image: url("https://images.pexels.com/photos/711089/pexels-photo-711089.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    }
+    99.99% {
+      background-image: url("https://images.pexels.com/photos/210540/pexels-photo-210540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    }
+  }

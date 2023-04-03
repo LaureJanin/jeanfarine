@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import logo from "../../assets/Logo-Externatic.svg";
+import logo from "../../assets/images/jeanfarine_logo.png";
 
 import "./Header.scss";
 
@@ -14,7 +14,7 @@ function Header() {
     <section id="header">
         <div className="header">
             <Link to="/">
-                <p>Logo</p>
+            <img className="logo" src={logo} alt="logo jean farine" width={150}/>
             </Link>
             <button type="button" className="burger" onClick={handleShowLinks}>
                 <span
@@ -40,6 +40,7 @@ function Header() {
              </Link>
           </ul>
         </nav>
+        <div id="HeadDecoration"></div>
     </section>
   );
 }
