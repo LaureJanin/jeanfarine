@@ -1,0 +1,159 @@
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .header {
+    display: flex;
+    align-items: center;
+        .logo {
+            &:hover {
+            filter: brightness(100%) drop-shadow(0 0 0.1rem yellow);
+          }
+        }
+        .burger {
+        background-color: transparent;
+        border: none;
+        }
+    }
+    nav {
+      ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        gap:3rem;
+        font-size: 1.5rem;
+        a {
+          color: beige;
+          text-decoration:none;
+          li {
+            &:hover {
+              filter: brightness(100%) drop-shadow(0 0 0.1rem yellow);
+            }
+          }
+        }
+      }
+    }
+    #HeadDecoration {
+        position: absolute;
+        margin-top: 14rem;
+        left:0px;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(
+          270deg,
+          rgba(233, 68, 68, 0) 12.24%,
+          yellow 49.95%,
+          rgba(233, 68, 68, 0) 90.93%
+        );
+        @media screen and (min-width: 1020px) {
+          margin-bottom: 4.25rem;
+        }
+      }
+}
+  
+@media (max-width: 768px) {
+    #header {
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:3rem;
+            width: 100%;
+            .burger {
+                padding: 0;
+                width: 30px;
+                height: 30px;
+                :hover {
+                    cursor: pointer;
+                    }
+    
+                .burger-bar,
+                .burger-bar::before,
+                .burger-bar::after {
+                    display: block;
+                    width: 30px;
+                    height: 3px;
+                    position: relative;
+                    border-radius: 3px;
+                    background-color: yellow;
+                    transition: all 0.5s ease-in-out;
+                }
+        
+                .burger-bar::before,
+                .burger-bar::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                }
+        
+                .burger-bar::before {
+                    transform: translateY(-12px);
+                }
+        
+                .burger-bar::after {
+                    transform: translateY(12px);
+                }
+        
+                .burger-bar-checked,
+                .burger-bar-checked::before,
+                .burger-bar-checked::after {
+                    display: block;
+                    width: 30px;
+                    height: 3px;
+                    position: relative;
+                    border-radius: 3px;
+                    background-color: yellow;
+                    transition: all 0.5s ease-in-out;
+                }
+        
+                .burger-bar-checked::before,
+                .burger-bar-checked::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                }
+        
+                .burger-bar-checked {
+                    width: 0;
+                    background-color: transparent;
+                }
+        
+                .burger-bar-checked::before {
+                    transform: rotate(45deg);
+                }
+        
+                .burger-bar-checked::after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+  
+        nav {
+            margin-top: 1rem;
+            ul {
+              flex-direction: column;
+              position: fixed;
+              justify-content: space-around;
+              align-items: center;
+              background-color: rgb(255, 228, 196);
+              left: -100vw;
+              height: 20rem;
+              padding: 0rem 0;
+              visibility: hidden;
+              transition: all 1s ease-in-out;
+              width: 100%;
+
+             li {
+                display: block;
+                color:black;
+                }
+            }
+  
+            .show-nav {
+                left: 0;
+                visibility: visible;
+            }
+        }
+    }
+}
