@@ -6,21 +6,8 @@ import "./Header.scss";
 
 function Header() {
   const [showLinks, setShowLinks] = useState(false);
-  const linkStates = [
-    useState(false),
-    useState(false),
-    useState(false),
-    useState(false)
-  ];
   const handleShowLinks = () => {
     setShowLinks(!showLinks);
-  };
-  const handleMouseEnter = (index) => {
-    linkStates[index][1](true);
-  };
-
-  const handleMouseLeave = (index) => {
-    linkStates[index][1](false);
   };
 
   return (
@@ -39,38 +26,26 @@ function Header() {
         </div>
         <nav>
           <ul className={`${showLinks ? "show-nav " : ""}`}>
-            <Link to="/history" onClick={handleShowLinks}>
-             <li 
-              className={linkStates[0][0] ? 'spacingSpaced' : 'spacing'}
-              onMouseEnter={() => handleMouseEnter(0)}
-              onMouseLeave={() => handleMouseLeave(0)}>
-                Histoire de la troupe
-                </li>
-            </Link>
-            <Link to="/dramas" onClick={handleShowLinks}>
-            <li 
-              className={linkStates[1][0] ? 'spacingSpaced' : 'spacing'}
-              onMouseEnter={() => handleMouseEnter(1)}
-              onMouseLeave={() => handleMouseLeave(1)}>
-                Nos réalisations
-                </li>
-             </Link>
-            <Link to="/pressReview" onClick={handleShowLinks}>
-            <li 
-              className={linkStates[2][0] ? 'spacingSpaced' : 'spacing'}
-              onMouseEnter={() => handleMouseEnter(2)}
-              onMouseLeave={() => handleMouseLeave(2)}>
-                On parle de nous
-                </li>
-             </Link>
-            <Link to="/contact" onClick={handleShowLinks}>
-            <li 
-              className={linkStates[3][0] ? 'spacingSpaced' : 'spacing'}
-              onMouseEnter={() => handleMouseEnter(3)}
-              onMouseLeave={() => handleMouseLeave(3)}>
-                Contact
-                </li>
-             </Link>
+            <li>
+                <Link data-item='Histoire'  to="/history" onClick={handleShowLinks}>
+                    Histoire
+                </Link>
+            </li>
+            <li>
+                <Link data-item='Réalisations' to="/dramas" onClick={handleShowLinks}>
+                    Réalisations
+                </Link>
+            </li>
+            <li>
+                <Link data-item='Presse' to="/pressReview" onClick={handleShowLinks}>
+                    Presse
+                </Link>
+            </li>
+           <li>
+                <Link data-item='Contact' to="/contact" onClick={handleShowLinks}>
+                    Contact
+                </Link>
+            </li>
           </ul>
         </nav>
         <div id="HeadDecoration"></div>
