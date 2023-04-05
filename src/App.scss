@@ -5,6 +5,39 @@
   text-align: center;
   font-family: $font-stack;
   color: beige;
+  .text {
+    font-size: 26px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    left: 50%;
+    color: #fedd58;
+    transform: translateX(-50%);
+    user-select: none;
+    margin: 1rem;
+  
+    .wrapper {
+      padding : 0.5rem;
+      .letter {
+        transition: ease-out 1s;
+        transform: translateY(40%);
+      }
+      .shadow {
+        transform: scale(1, -1);
+        color: #9999992c;
+        transition: ease-in 5s, ease-out 5s;
+      }
+      &:hover {
+        .letter {
+          transform: translateY(-150%);
+        }
+        .shadow {
+          opacity: 0;
+          transform: translateY(150%);
+        }
+      }
+    }
+  }
 }
 
 * {
