@@ -1,7 +1,11 @@
-function Contact() {
+import "./styles/contact.scss"
 
+function Contact() {
+    const text = "Contactez nous";
     return (
-        <h1>Page contact</h1>
+        <div >
+            Contactez nous
+        </div>
     )
 }
 export default Contact

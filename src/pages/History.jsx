@@ -1,39 +1,134 @@
+import { useEffect } from "react";
+import ionesco from  "../assets/photos/ionesco/DSC_9208.jpg";
+import moliere from "../assets/photos/moliere/IMG_1625.jpg";
+import girerd from "../assets/photos/girerd/DSC_3649.jpg";
+import brecht from "../assets/photos/brecht/JAC_3512_2.jpg";
+import marivaux from "../assets/photos/marivaux/JAC_2299.jpg";
 import "./styles/history.scss"
 
 function History() {
+	const timelineData = [
+		{
+		  year: 1999,
+		  title: "Les Palmes de Monsieur Schutz de Jean-Noël Fenwick",
+		  director: "Michel Bernier",
+		  soundAndLight: "Monique Aujogue",
+		  photo: null
+		},
+		{
+		  year: 2003,
+		  title: "Un Air de Famille d'Agnès Jaoui et Jean-Pierre Bacri",
+		  director: "Michel Bernier",
+		  soundAndLight: "Marie Russel",
+		  photo: null
+		},
+		{
+		  year: 2006,
+		  title: "La Cantatrice Chauve d'Eugène Ionesco",
+		  director: "Michel Bernier",
+		  soundAndLight: "Jacques Janin",
+		  photo: ionesco
+		},
+		{
+		  year: 2008,
+		  title: "Les précieuses ridicules de Molière",
+		  director: "Michel Bernier",
+		  soundAndLight: "Jacques Janin",
+		  photo: moliere
+		},
+		{
+		  year: 2011,
+		  title: "Echafaudage de Luc Girerd",
+		  director: "Michel Bernier",
+		  soundAndLight: "Thomas Dormoy",
+		  photo: girerd
+		},
+		{
+		  year: 2013,
+		  title: "La Noce de Bertolt Brecht",
+		  director: "Michel Bernier",
+		  soundAndLight: null,
+		  photo: brecht
+		},
+		{
+		  year: 2016,
+		  title: "Le jeu de l'amour et du hazard, Marivaux",
+		  director: "Karine Giraud",
+		  soundAndLight: null,
+		  photo: marivaux
+		}
+	  ];
+
+	  useEffect(() => {
+		const observer = new IntersectionObserver((entries) => {
+		  entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+			  entry.target.classList.add("show");
+			} else {
+			  entry.target.classList.remove("show");
+			}
+		  });
+		});
+	
+		const hiddenElements = document.querySelectorAll(".hidden");
+		hiddenElements.forEach((el) => observer.observe(el));
+	  }, []);
 
     return (
         <>
-            <h1>L'histoire de la troupe</h1>
-                 <section className="timeline">
-                    <div className="container left">
-		                <div className="content">
-			                <h2>Tecnologia</h2>
-			                    <p>
-				                    A tecnologia está em constante evolução, sempre trazendo novas possibilidades e transformando a forma como vivemos e interagimos com o mundo. Com a crescente adoção de dispositivos móveis, a internet se tornou mais acessível e poderosa do que nunca, permitindo que pessoas e empresas se conectem e realizem tarefas de forma mais eficiente.
-			                    </p>
-		                </div>
-	                </div>
-
-	                <div className="container right">
-		                <div className="content">
-			                <h2>Arte</h2>
-			                    <p>
-				                    A arte é uma expressão humana que transcende o tempo e o espaço. Ela é capaz de transmitir emoções e ideias de forma única e pessoal, proporcionando novas perspectivas e reflexões sobre a vida. Desde a antiguidade, a arte tem sido um meio de comunicação e conexão entre as pessoas, e continua a inspirar e encantar as gerações atuais.
-			                    </p>
-		                </div>
-	                </div>
-
-	                <div className="container left">
-		                <div className="content">
-			                <h2>Matematica</h2>
-			                    <p>
-				                    A matemática é uma disciplina fundamental que está presente em todas as áreas do conhecimento e da vida cotidiana. Ela nos ajuda a entender e resolver problemas complexos, desde a contagem de objetos simples até cálculos avançados de engenharia e ciência. Além disso, a matemática é a base da lógica e do raciocínio, desenvolvendo habilidades críticas e analíticas em seus estudantes. Sem a matemática, muitos avanços tecnológicos e científicos não teriam sido possíveis.
-			                    </p>
-		                </div>
-	                </div>
-
-                </section>
+            <div className="text">
+				<div className="wrapper">
+					<div className="letter">H</div>
+					<div className="shadow">H</div>
+				</div>
+				<div className="wrapper">
+					<div className="letter">I</div>
+					<div className="shadow">I</div>
+				</div>
+				<div className="wrapper">
+					<div className="letter">S</div>
+					<div className="shadow">S</div>
+				</div>
+				<div className="wrapper">
+					<div className="letter">T</div>
+					<div className="shadow">T</div>
+				</div>
+				<div className="wrapper">
+					<div className="letter">O</div>
+					<div className="shadow">O</div>
+				</div>
+				<div className="wrapper">
+					<div className="letter">I</div>
+					<div className="shadow">I</div>
+				</div>
+				<div className="wrapper">
+					<div className="letter">R</div>
+					<div className="shadow">R</div>
+				</div>
+				<div className="wrapper">
+					<div className="letter">E</div>
+					<div className="shadow">E</div>
+				</div>
+			</div>
+			<p>En 1997, un groupe de parents d'élèves de l'école de Saint Germain Nuelles se réunit avec l'envie de monter une pièce de théâtre et de la jouer.</p>
+			<p>La pièce choisie, <span id="italic"> Les Palmes de Monsieur Schutz</span> se révèle difficile à mettre en oeuvre pour les amateurs que nous sommes. les difficultés de la mise en scène rendent notre travail laborieux. Nous réalisons que le métier de metteur en scène ne s'invente pas !</p>
+			<p>En 1999, avec l'aide de Michel Bernier, metteur en scène professionnel, la pièce aboutit enfin et se joue pour la première fois à Nuelles. Michel nous fait partager son talent et l'envie de poursuivre l'aventure s'impose à nous naturellement.</p>
+			<p>Ainsi de nouvelles pièces sont montées avec le renouvellement d'une partie des membres de la troupe.</p>
+            <section className="timeline">
+				{timelineData.map((item, index) => (
+					<div
+						key={index}
+						className={`container hidden ${index % 2 === 0 ? "left" : "right"}`}
+					>
+						<div className="content">
+						<h2>{item.year} - {item.title}</h2>
+						{item.photo && <img src={item.photo} className="photo" alt={item.title} />}
+						{item.director && <p>Mise en scène : {item.director}</p>}
+						{item.soundAndLight && <p>Son et lumière : {item.soundAndLight}</p>}
+						</div>
+					</div>
+				))}
+            </section>
         </>
     )
 }
