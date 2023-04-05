@@ -59,6 +59,14 @@ function History() {
 		}
 	  ];
 
+	const text = "HISTOIRE";
+  	const letters = [...text].map((letter, index) => (
+			<div className="wrapper" key={index}>
+			<div className="letter">{letter}</div>
+			<div className="shadow">{letter}</div>
+			</div>
+		));
+
 	  useEffect(() => {
 		const observer = new IntersectionObserver((entries) => {
 		  entries.forEach((entry) => {
@@ -76,40 +84,7 @@ function History() {
 
     return (
         <>
-            <div className="text">
-				<div className="wrapper">
-					<div className="letter">H</div>
-					<div className="shadow">H</div>
-				</div>
-				<div className="wrapper">
-					<div className="letter">I</div>
-					<div className="shadow">I</div>
-				</div>
-				<div className="wrapper">
-					<div className="letter">S</div>
-					<div className="shadow">S</div>
-				</div>
-				<div className="wrapper">
-					<div className="letter">T</div>
-					<div className="shadow">T</div>
-				</div>
-				<div className="wrapper">
-					<div className="letter">O</div>
-					<div className="shadow">O</div>
-				</div>
-				<div className="wrapper">
-					<div className="letter">I</div>
-					<div className="shadow">I</div>
-				</div>
-				<div className="wrapper">
-					<div className="letter">R</div>
-					<div className="shadow">R</div>
-				</div>
-				<div className="wrapper">
-					<div className="letter">E</div>
-					<div className="shadow">E</div>
-				</div>
-			</div>
+            <div className="text">{letters}</div>
 			<p>En 1997, un groupe de parents d'élèves de l'école de Saint Germain Nuelles se réunit avec l'envie de monter une pièce de théâtre et de la jouer.</p>
 			<p>La pièce choisie, <span id="italic"> Les Palmes de Monsieur Schutz</span> se révèle difficile à mettre en oeuvre pour les amateurs que nous sommes. les difficultés de la mise en scène rendent notre travail laborieux. Nous réalisons que le métier de metteur en scène ne s'invente pas !</p>
 			<p>En 1999, avec l'aide de Michel Bernier, metteur en scène professionnel, la pièce aboutit enfin et se joue pour la première fois à Nuelles. Michel nous fait partager son talent et l'envie de poursuivre l'aventure s'impose à nous naturellement.</p>

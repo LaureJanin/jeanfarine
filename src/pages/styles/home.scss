@@ -1,24 +1,50 @@
 #home {
-.slider {
-    height: 36vw;
-    width: 85vw;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 1rem;
-    background-image: url("../../assets/photos/moliere/IMG_1625.jpg");
-    background-size:cover;
-    border-radius: 5px;
-    animation: myAnimation alternate infinite 15s;
-  }
-  @keyframes myAnimation {
-    33.33% {
-      background-image: url("../../assets/photos/marivaux/JAC_2280.jpg");
+  opacity: 0; 
+  animation-name: slideInFromBottom; 
+  animation-duration: 1.5s; 
+  animation-timing-function: ease-out; 
+  animation-fill-mode: forwards; 
+  @keyframes slideInFromBottom {
+    from {
+      opacity: 0; 
+      transform: translateY(40px); 
     }
-    66.66% {
-      background-image: url("../../assets/photos/ionesco/DSC_9227.jpg");
-    }
-    99.99% {
-      background-image: url("../../assets/photos/brecht/JAC_3512_2.jpg");
+    to {
+      opacity: 1; 
+      transform: translateY(0), scale(1.1);
     }
   }
-}
+    .slider {
+      height: 30vw;
+      width: 60vw;
+      margin: auto;
+      background-image: url("../../assets/photos/moliere/IMG_1625.jpg");
+      background-size:cover;
+      animation: myAnimation alternate infinite 15s;
+    }
+    @keyframes myAnimation {
+      33.33% {
+        background-image: url("../../assets/photos/marivaux/JAC_2280.jpg");
+      }
+      66.66% {
+        background-image: url("../../assets/photos/ionesco/DSC_9227.jpg");
+      }
+      99.99% {
+        background-image: url("../../assets/photos/brecht/JAC_3512_2.jpg");
+      }
+    }
+    .jeanfarine {
+      color:#000000;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      h2 {
+        margin:0;
+      }
+      p {
+        width: 100%;
+      }
+    }
+  }

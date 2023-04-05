@@ -27,18 +27,29 @@
         align-items: center;
         list-style: none;
         gap:3rem;
-        font-size: 1.5rem;
-        a {
-          color: beige;
-          text-decoration:none;
-          .spacing {
-            letter-spacing: 0;
-            opacity: .7;
-            transition: all 1s ease-out;
+        li {
+          a {
+            color: beige;
+            font-size:18px;
+            text-decoration:none;
+            text-transform: uppercase;
+            position:relative;
+            transition: all 0.5s ease-in-out;
+          &::before {
+            content: attr(data-item);
+            transition: 0.5s;
+            color: yellow;
+            position: absolute;
+            width: 0;
+            overflow: hidden;
           }
-          .spacingSpaced {
-            opacity: 1;
-            letter-spacing: 5px;
+  
+          &:hover {
+            &::before {
+              width: 100%;
+              transition: all 0.5s ease-in-out;
+            }
+          }
           }
         }
       }
@@ -49,7 +60,12 @@
         left:0px;
         width: 100%;
         height: 3px;
-        background: linear-gradient(
+        animation-name: border-anim;
+        animation-duration: 2s;
+         animation-timing-function: ease-out;
+         animation-fill-mode: forwards;
+          clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%); 
+          background: linear-gradient(
           270deg,
           rgba(233, 68, 68, 0) 12.24%,
           yellow 49.95%,
