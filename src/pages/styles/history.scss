@@ -1,14 +1,34 @@
-p {
+.intro {
 	width: 70%;
 	margin:auto;
 	text-align: center;
-
+	opacity: 0; 
+	animation-name: slideInFromBottom; 
+	animation-duration: 1.5s; 
+	animation-timing-function: ease-out; 
+	animation-fill-mode: forwards;  
 	#italic {
 		font-family:'Times New Roman', Times, serif;
 		font-style: italic;
 		color: #fedd58;
-	  }
+	}
 }
+@keyframes slideInFromBottom {
+	from {
+	  opacity: 0; 
+	  transform: translateY(20px); 
+	}
+	to {
+	  opacity: 1; 
+	  transform: translateY(0), scale(1.1);
+	}
+}
+
+@media screen and (max-width: 1000px) {
+    .intro {
+		width: 95%;
+    }
+  }
 
 .hidden {
 	opacity: 0;

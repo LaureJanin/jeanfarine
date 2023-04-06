@@ -4,6 +4,7 @@
   animation-duration: 1.5s; 
   animation-timing-function: ease-out; 
   animation-fill-mode: forwards; 
+
   @keyframes slideInFromBottom {
     from {
       opacity: 0; 
@@ -14,37 +15,132 @@
       transform: translateY(0), scale(1.1);
     }
   }
-    .slider {
+
+  .slider {
       height: 30vw;
       width: 60vw;
-      margin: auto;
+      margin-left:23rem;
       background-image: url("../../assets/photos/moliere/IMG_1625.jpg");
       background-size:cover;
-      animation: myAnimation alternate infinite 15s;
-    }
-    @keyframes myAnimation {
-      33.33% {
-        background-image: url("../../assets/photos/marivaux/JAC_2280.jpg");
-      }
-      66.66% {
-        background-image: url("../../assets/photos/ionesco/DSC_9227.jpg");
-      }
-      99.99% {
-        background-image: url("../../assets/photos/brecht/JAC_3512_2.jpg");
-      }
-    }
+      animation: animationSlider alternate infinite 15s;
     .jeanfarine {
-      color:#000000;
+      color:beige;
+      background-color: rgba(45, 51, 51, 0.726);
+      width: 17em;
+      transform: translate(-10rem, 120px);
       padding: 1rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-content: center;
       h2 {
+        color: #fedd58;
+        font-size: 1.3rem;
         margin:0;
       }
       p {
         width: 100%;
+        margin-top: 0.5rem;
       }
     }
   }
+
+  @keyframes animationSlider {
+    33.33% {
+      background-image: url("../../assets/photos/marivaux/JAC_2280.jpg");
+    }
+    66.66% {
+      background-image: url("../../assets/photos/ionesco/DSC_9227.jpg");
+    }
+    99.99% {
+      background-image: url("../../assets/photos/brecht/JAC_3512_2.jpg");
+    }
+  }
+
+  @media screen and (max-width: 1250px) {
+    .slider {
+      height: 40vw;
+      width: 70vw;
+      margin-left: 15rem;
+        .jeanfarine {
+        transform: translate(-11rem, 100px);
+      }
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .slider {
+      height: 50vw;
+      width: 95vw;
+      margin: auto;
+      .jeanfarine {
+        display: none;
+      }
+    }
+  }
+
+  .titre h2 {
+    text-align: center;
+    color:#fedd58; 
+    text-transform: uppercase;
+    width: 70%;
+    margin-top: 3rem ;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 2rem;
+    align-items: center;
+  }
+    
+  .titre h2:after,.titre h2:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid beige;
+    border-top: 1px solid beige;
+    height: 5px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .titre h2 {
+      width: 80%;
+    }
+  }
+  
+  .actualite {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    padding: 1rem;
+    gap:2rem;
+    .box {
+    background-color: rgb(49, 52, 52);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.258);
+    padding: 1rem;
+      h2 {
+        color: #fedd58;
+        margin-bottom: 1rem;
+      }
+      p {
+        width: 100%;
+        #italic {
+          font-family:'Times New Roman', Times, serif;
+          font-style: italic;
+          color: #fedd58;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .actualite {
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+      .jeanfarine {
+        display: none;
+      }
+    }
+  }
+}

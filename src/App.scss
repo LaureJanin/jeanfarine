@@ -1,22 +1,30 @@
 @import "./assets/variables";
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 #root {
   margin: 0 auto;
   text-align: center;
   font-family: $font-stack;
   color: beige;
   .text {
-    font-size: 26px;
     display: flex;
-    position: relative;
     justify-content: center;
-    left: 50%;
+    align-items: center;
     color: #fedd58;
-    transform: translateX(-50%);
-    user-select: none;
     margin: 1rem;
+    font-size: 1.5rem;
+    animation-name: border-anim;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%); 
   
-    .wrapper {
+   .wrapper {
       padding : 0.5rem;
       .letter {
         transition: ease-out 1s;
@@ -38,10 +46,39 @@
       }
     }
   }
+
+  @keyframes border-anim {
+    from {
+      clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%); 
+      }
+    to {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); 
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .text {
+      display: flex;
+      flex-wrap: wrap;
+      width: 95%;
+      font-size: 1.5rem;
+      margin: auto;
+      .wrapper {
+        padding: 0.2rem;
+      }
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .text {
+      display: flex;
+      flex-wrap: wrap;
+      width: 95%;
+      font-size: 1rem;
+      margin: auto;
+      .wrapper {
+        padding: 0.2rem;
+      }
+    }
+  }
 }
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
