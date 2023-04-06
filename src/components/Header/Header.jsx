@@ -14,7 +14,7 @@ function Header() {
     <section id="header">
         <div className="header">
             <Link to="/">
-            <img className="logo" src={logo} alt="logo jean farine" width={150}/>
+                <img className="logo" src={logo} alt="logo jean farine" width={150}/>
             </Link>
             <button type="button" className="burger" onClick={handleShowLinks}>
                 <span
@@ -24,7 +24,7 @@ function Header() {
                 />
             </button>
         </div>
-        <nav>
+        <nav className={`${showLinks ? "heightNav " : ""}`}> 
           <ul className={`${showLinks ? "show-nav " : ""}`}>
             <li>
                 <Link data-item='Histoire'  to="/history" onClick={handleShowLinks}>
