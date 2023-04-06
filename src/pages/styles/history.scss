@@ -58,19 +58,18 @@
 	.container {
 		padding: 10px 40px;
 		position: relative;
-		background-color: #242424;
 		width: 50%;
-		transition: width 500ms, transform 500ms, opacity 1s;
+		transition: height 500ms, transform 500ms, opacity 1s;
 
 		.content {
 			padding: 1rem;
-			border:1px solid #fedd58;
+			border:1px solid #fedd58bd;
 			position: relative;
 			border-radius: 8px;
-			transition: transform 0.2s ease-in-out;
-	
+			background-color: #261200b8;
+			// transition: transform 0.2s ease-in-out;
 			&:hover {
-			box-shadow: 0px 0px 8px 3px rgba(255, 255, 255, 0.5); /* Ajout d'une brillance à la bordure */
+			transform: scale(1.1) ;
 			}
 			h2 {
 				font-weight: 700;

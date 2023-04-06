@@ -97,7 +97,7 @@ function History() {
 					>
 						<div className="content">
 						<h2>{item.year} - {item.title}</h2>
-						{item.photo && <img src={item.photo} className="photo" alt={item.title} />}
+						{/* {item.photo && <img src={item.photo} className="photo" alt={item.title} />} */}
 						{item.director && <p>Mise en scène : {item.director}</p>}
 						{item.soundAndLight && <p>Son et lumière : {item.soundAndLight}</p>}
 						</div>
