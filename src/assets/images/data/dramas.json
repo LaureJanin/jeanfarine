@@ -1,0 +1,51 @@
+[
+    {
+      "id": "1",
+      "title": "Les Palmes de Monsieur Schutz",
+      "author": "Jean-Noël Fenwick",
+      "image": "src/assets/photos/fenwick/Palmes_Schutz_c.jpg",
+      "description": "1895, Paris. Rodolphe Schutz, ambitieux directeur de l’école de physique et de chimie de la ville de Paris, rêve de remporter les palmes académiques. Il compte bien sur Pierre Curie, qui fait des recherches sur l’uranium et le radium pour décrocher cette récompense.<br>Maria Sklodowska, jeune étudiante polonaise ultra-diplômée a été recrutée spécialement pour aider Pierre. Ce dernier ne sera pas insensible à l’intelligence de celle qui s’appellera bientôt Marie Curie…<br><br>Inspirée très librement de la vie de Pierre et Marie Curie, la pièce raconte leurs travaux à l'École supérieure de physique et de chimie industrielles de la ville de Paris (ESPCI ParisTech), où ils ont découvert que l'uranium émettait un courant électrique et l'existence du radium. "
+    },
+    {
+      "id": "2",
+      "title": "Un Air de Famille",
+      "author": "Agnès Jaoui et Jean-Pierre Bacri",
+      "image": "src/assets/photos/marivaux/JAC_2288.jpg",
+      "description": "Un magnifique portrait de famille où les personnages réunis distribuent des messages drôles, grinçants et parfois cyniques... Une vraie famille en somme !"
+    },
+    {
+      "id": "3",
+      "title": "La Cantatrice Chauve",
+      "author": "Eugène Ionesco",
+      "image": "src/assets/photos/ionesco/DSC_9227.jpg",
+      "description": "Une anti-pièce où le language est mis en scène sans l'ombre d'une idée. Des dialogues farfelus où le non-sens règne en maître sans logique."
+    },
+    {
+      "id": "4",
+      "title": "Les Précieuses Ridicules",
+      "author": "Molière",
+      "image": "src/assets/photos/moliere/IMG_1639.jpg",
+      "description": "Deux jeunes provinciales débarquent à Paris en quête d'amour et de jeu d'esprit. Leur père décide de les marier à deux prétendants mais ces dernières les ridiculisent de telle façon que ceux-ci voudront se venger"
+    },
+    {
+      "id": "5",
+      "title": "Echafaudages",
+      "author": "Luc Girerd",
+      "image": "src/assets/photos/girerd/DSC_3662.jpg",
+      "description": "Le quotidien d'un chantier de la Société des Travaux Publics Urbains. Six personnages aux ambitions et attentes contradictoires se croisent dans un huis clos acide et burlesque. Le président, Monsieur Lashermes, cynique et humiliant, vient en tournée d'inspection à cinq semaines de l'inauguration qui doit donner le coup d'envoi de sa campagne électorale. Les autres protagonistes ne vont pas faciliter la bonne marche du chantier."
+    },
+    {
+      "id": "6",
+      "title": "La Noce",
+      "author": "Bertolt Brecht",
+      "image": "src/assets/photos/brecht/JAC_3512_2.jpg",
+      "description": "Deux jeunes gens convolent en justes noces. La famille et les amis sont réunis et le banquet commence... La mariée est fière que son homme ait bâti les meubles de leur propre 'chez eux'. Le premier jour d'une nouvelle vie sera-t-il vraiment le plus beau ?"
+    },
+    {
+      "id": "7",
+      "title": "Le jeu de l'amour et du hazard",
+      "author": "Marivaux",
+      "image": "src/assets/photos/marivaux/JAC_2288.jpg",
+      "description": "Sylvia s'inquiète du mariage arrangé que son père, Monsieur Orgon, a projeté pour elle avec Dorante, le fils d'un de ses vieux amis. Afin de mieux connaître son futur époux (qu'elle n'a jamais vu), elle obtient de son brave homme de père l'autorisation de l'observer, sous le déguisement de sa servante (Lisette). De son côté Dorante a eu la même idée avec son valet Arlequin. Se dessine alors un double jeu de masques qui engendre complications et quiproquos sous l'œil amusé de Monsieur Orgon et de son fils complice Mario."
+    }
+]

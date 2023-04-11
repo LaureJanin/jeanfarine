@@ -1,0 +1,12 @@
+#dramaTheater {
+    cursor: pointer;
+    img {
+        width: 25rem;
+        height: 25rem;
+        object-fit: cover;
+    }
+    img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+    }
+}
