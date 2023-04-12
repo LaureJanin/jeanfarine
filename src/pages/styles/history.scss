@@ -4,7 +4,7 @@
 		margin:auto;
 		text-align: center;
 		opacity: 0; 
-		animation-name: slideInFromBottom; 
+		animation-name: historySlideFromBottom; 
 		animation-duration: 1.5s; 
 		animation-timing-function: ease-out; 
 		animation-fill-mode: forwards;  
@@ -14,7 +14,7 @@
 			color: #fedd58;
 		}
 	}
-	@keyframes slideInFromBottom {
+	@keyframes historySlideFromBottom {
 		from {
 		opacity: 0; 
 		transform: translateY(20px); 

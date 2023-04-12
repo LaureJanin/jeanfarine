@@ -1,7 +1,8 @@
 import { useState } from "react";
-import DramaTheater from "../components/DramaTheater/DramaTheater"
-import dramas from "../assets/images/data/dramas.json"
-import "./styles/dramas.scss"
+import DramaTheater from "../components/DramaTheater/DramaTheater";
+import dramas from "../assets/images/data/dramas.json";
+import croix from "../assets/images/croix.png";
+import "./styles/dramas.scss";
 
 function Dramas() {
   const [selectDrama, setSelectDrama] = useState(null);
@@ -33,8 +34,10 @@ function Dramas() {
       {selectDrama && (
         <div className="fond">
           <div className="box">
-            <button style={{ position: "absolute", top: 0, right: 0 }} onClick={handleClose}>X</button>
-            <img src={selectDrama.image} alt={selectDrama.title} />
+            <button onClick={handleClose}>
+              <img src={croix} alt="close window"/>
+            </button>
+            <img className="imgFond" src={selectDrama.image} alt={selectDrama.title} />
             <h2>{selectDrama.title}</h2>
             <div className="content">
                 <h3>Auteur : {selectDrama.author}</h3>
