@@ -5,14 +5,14 @@ import croix from "../assets/images/croix.png";
 import "./styles/dramas.scss";
 
 function Dramas() {
-  const [selectDrama, setSelectDrama] = useState(null);
+  const [selectDrama, setSelectDrama] = useState(false);
 
   function handleClick(drama) {
     setSelectDrama(drama);
   }
 
   function handleClose() {
-    setSelectDrama(null);
+    setSelectDrama(false); 
   }
 
   const text = "NOS RÉALISATIONS";
