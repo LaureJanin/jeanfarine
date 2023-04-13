@@ -57,7 +57,7 @@ function History() {
 		  soundAndLight: null,
 		  photo: marivaux
 		}
-	  ];
+	];
 
 	const text = "HISTOIRE";
   	const letters = [...text].map((letter, index) => (
@@ -65,9 +65,9 @@ function History() {
 			<div className="letter">{letter}</div>
 			<div className="shadow">{letter}</div>
 			</div>
-		));
+	));
 
-	  useEffect(() => {
+	useEffect(() => {
 		const observer = new IntersectionObserver((entries) => {
 		  entries.forEach((entry) => {
 			if (entry.isIntersecting) {
@@ -80,7 +80,7 @@ function History() {
 	
 		const hiddenElements = document.querySelectorAll(".hidden");
 		hiddenElements.forEach((el) => observer.observe(el));
-	  }, []);
+	}, []);
 
     return (
         <section id="history">

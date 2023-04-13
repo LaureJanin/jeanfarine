@@ -1,0 +1,74 @@
+#dramaTheater {
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: relative;
+  
+    img {
+        width: 25rem;
+        height: 25rem;
+        object-fit: cover;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        transition: opacity 0.5s ease;
+    }
+}
+#dramaTheater:nth-child(1) {
+    animation: fadeIn 0.5s ease-in 0.3s forwards;
+}
+
+#dramaTheater:nth-child(2) {
+    animation: fadeIn 0.5s ease-in 0.6s forwards;
+}
+
+#dramaTheater:nth-child(3) {
+    animation: fadeIn 0.5s ease-in 0.9s forwards;
+}
+
+#dramaTheater:nth-child(4) {
+    animation: fadeIn 0.5s ease-in 1.2s forwards;
+}
+
+#dramaTheater:nth-child(5) {
+    animation: fadeIn 0.5s ease-in 1.5s forwards;
+}
+
+#dramaTheater:nth-child(6) {
+    animation: fadeIn 0.5s ease-in 1.8s forwards;
+}
+
+#dramaTheater:nth-child(7) {
+    animation: fadeIn 0.5s ease-in 2.1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+}
+#dramaTheater:hover .overlay {
+    opacity: 1;
+    color: #fedd58;
+}
+
+@media screen and (max-width: 1000px) {
+    #dramaTheater {
+        img {
+            width: 22rem;
+            height: 22rem;
+            margin: auto;
+        }
+    }
+}
