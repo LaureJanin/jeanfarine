@@ -6,13 +6,18 @@ import "./styles/dramas.scss";
 
 function Dramas() {
   const [selectDrama, setSelectDrama] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   function handleClick(drama) {
     setSelectDrama(drama);
   }
 
   function handleClose() {
-    setSelectDrama(false); 
+    setIsClosing(true);
+    setTimeout(() => {
+      setSelectDrama(false);
+      setIsClosing(false);
+    }, 800);
   }
 
   const text = "NOS RÉALISATIONS";
@@ -32,7 +37,7 @@ function Dramas() {
         ))}
       </div>
       {selectDrama && (
-        <div className="fond">
+        <div className={`fond${isClosing ? ' closing' : ''}`}>
           <div className="box">
             <button onClick={handleClose}>
               <img src={croix} alt="close window"/>
@@ -40,7 +45,7 @@ function Dramas() {
             <img className="imgFond" src={selectDrama.image} alt={selectDrama.title} />
             <h2>{selectDrama.title}</h2>
             <div className="content">
-                <h3>Auteur : {selectDrama.author}</h3>
+                <h3>Auteur(s) : {selectDrama.author}</h3>
                 <h3>Résumé</h3>
                 <p dangerouslySetInnerHTML={{__html: selectDrama.description}}></p>
             </div>
