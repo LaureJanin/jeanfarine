@@ -5,17 +5,19 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  gap:1rem;
   margin-top: 1rem;
+  margin-bottom: 2rem;
+
 
   @media screen and (min-width: 1020px) {
     flex-direction: row;
     margin-top: 2rem;
-    margin-bottom: 2rem;
   }
 
   #footDecoration {
     position: absolute;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     width: 100%;
     height: 3px;
     background: linear-gradient(
@@ -29,12 +31,26 @@ footer {
     }
   }
 
-  h3 a {
-    color: white;
-    text-decoration: none;
-  }
-
-  h3 a:hover {
-    color: yellow;
+  a {
+    color: beige;
+    font-size:18px;
+    text-decoration:none;
+    text-transform: uppercase;
+    position:relative;
+    transition: all 0.5s ease-in-out;
+    &::before {
+    content: attr(data-item);
+    transition: 0.5s;
+    color: #fedd58;
+    position: absolute;
+    width: 0;
+    overflow: hidden;
+   }
+    &:hover {
+      &::before {
+        width: 100%;
+        transition: all 0.5s ease-in-out;
+      }
+    }
   }
 }

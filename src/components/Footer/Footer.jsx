@@ -6,9 +6,9 @@ function Footer() {
     return (
         <footer>
             <div id="footDecoration"></div>
-            <h3>Footer</h3>
-            <Link to="/contact">
-                <h3>Contact</h3>
+            <a data-item='©laurejanin' href="https://laurejanin-portfolio.netlify.app/" target="blank">©laurejanin</a>
+            <Link data-item='Contact' to="/contact">
+                    Contact
             </Link>
         </footer>
     );
