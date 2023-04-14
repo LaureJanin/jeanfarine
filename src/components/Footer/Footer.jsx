@@ -8,7 +8,7 @@ function Footer() {
             <div id="footDecoration"></div>
             <a data-item='©laurejanin' href="https://laurejanin-portfolio.netlify.app/" target="blank">©laurejanin</a>
             <Link data-item='Contact' to="/contact">
-                    Contact
+            Contact
             </Link>
         </footer>
     );
