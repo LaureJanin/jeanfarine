@@ -1,7 +1,9 @@
+import Title from "../components/Title/Title"
+
 function PressReview() {
 
     return (
-        <h1>On en parle...</h1>
+        <Title text="On en parle..." />
     )
 }
 export default PressReview

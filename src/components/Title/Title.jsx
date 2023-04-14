@@ -1,4 +1,5 @@
 import React from 'react';
+import "./title.scss";
 
 function Title(props) {
   const { text } = props;
@@ -8,7 +9,11 @@ function Title(props) {
       <div className="shadow">{letter}</div>
     </div>
   ));
-  return <div>{letters}</div>;
+  return (
+    <div id="text">
+        {letters}
+    </div>
+    )
 }
 
 export default Title;

@@ -1,14 +1,7 @@
+import Title from "../components/Title/Title"
 import "./styles/contact.scss"
 
 function Contact() {
-    const text = "NOUS CONTACTER";
-    const letters = [...text].map((letter, index) => (
-              <div className="wrapper" key={index}>
-              <div className="letter">{letter}</div>
-              <div className="shadow">{letter}</div>
-              </div>
-    ));
-
     const sendEmail = (e) => {
         e.preventDefault();
         emailjs.sendForm(
@@ -25,7 +18,7 @@ function Contact() {
 
     return (
         <section id="contact">
-            <div className="text">{letters}</div>
+            <Title text="Nous contacter" />
             <form onSubmit={sendEmail}>
                 <div className="box1">
                     <label htmlFor="name"></label>
