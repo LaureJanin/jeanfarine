@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Background from "./components/Background/background";
 import Home from "./pages/home";
 import History from "./pages/history";
-import Dramas from "./pages/dramas";
+import Dramas from "./pages/Dramas";
 import PressReview from "./pages/pressReview";
 import Contact from "./pages/contact";
 
