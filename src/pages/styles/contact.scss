@@ -1,0 +1,134 @@
+#contact {
+    margin-bottom: 2rem;
+    form {
+        margin-bottom: 2rem;
+        .box1 {
+            opacity: 0; 
+            position: relative;
+            animation-name: slideFormFromBottom;
+            animation-duration:  0.8s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+            input {
+                color:rgb(172, 58, 58);
+                background-color: #0e0601;
+                width: 25rem;
+                padding: 20px 20px;
+                border-radius: 6px;
+                border: none;
+                font-size: 1em;
+                margin-top: 1rem;
+                color: beige;
+                outline: none;
+            }
+        }
+
+        .box2 {
+            opacity: 0; 
+            position: relative;
+            animation-name: slideFormFromBottom;
+            animation-duration: 0.8s;
+            animation-delay: 0.5s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards; 
+            input {
+                background-color: #0e0601;
+                width: 25rem;
+                padding: 20px 20px;
+                border-radius: 6px;
+                border: none;
+                font-size: 1em;
+                margin-top: 1rem;
+                color: beige;
+                outline: none;
+            }
+        }
+
+        .box3 {
+            opacity: 0; 
+            position: relative;
+            animation-name: slideFormFromBottom;
+            animation-duration:  0.8s;
+            animation-delay: 1s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+            textarea {
+                font-family: "Lato";
+                color: beige;
+                background-color: #0e0601;
+                width: 25rem;
+                height: 14rem;
+                padding: 1rem;
+                border-radius: 6px;
+                border: none;
+                margin-top: 1rem;
+                font-size: 1em;
+                outline: none;
+            }
+        }
+
+        .box4 {
+            opacity: 0; 
+            position: relative;
+            animation-name: slideFormFromBottom;
+            animation-duration:  0.8s;
+            animation-delay: 1.6s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+            .buttonSubmit {
+                color: beige;
+                background: #0e0601;
+                border:1px solid #fedd58bd;
+                border-radius: 6px;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 1rem;
+                padding: 1rem 3rem;
+                transition: 0.2s;
+                margin-top: 1rem;
+                cursor: pointer;
+            }
+            .buttonSubmit:hover {
+                background: #0e0601;
+                color: #fedd58bd;
+                border: 1px solid #fedd58bd;
+                box-shadow: 0 0 35px #fedd58bd; 
+            }
+
+            .buttonSubmit:active {
+                background-color: #fedd58bd;
+                color: #261200dc;
+            }
+
+            @keyframes box {
+                0% {
+                  box-shadow: #261200dc;
+                }
+                50% {
+                  box-shadow: 0 0 25px #fedd58bd;
+                }
+                100% {
+                  box-shadow: #261200dc;
+                }
+            }
+        }
+
+        @keyframes slideFormFromBottom {
+            from {
+                opacity: 0; 
+                transform: translateY(+150%); 
+            }
+            to {
+                opacity: 1; 
+                transform: translateY(0), scale(1.1);
+            }
+        }
+    }
+    .contactDirect {
+        color:beige;
+        a {
+            text-decoration: none;
+            color: #fedd58bd;
+        }
+    }
+}

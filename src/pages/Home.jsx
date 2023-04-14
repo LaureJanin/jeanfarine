@@ -1,16 +1,10 @@
+import Title from "../components/Title/Title"
 import "./styles/home.scss"
 
 function Home() {
-  const text = "BIENVENUE SUR LE SITE DES JEAN FARINE";
-  const letters = [...text].map((letter, index) => (
-    <div className="wrapper" key={index}>
-      <div className="letter">{letter}</div>
-      <div className="shadow">{letter}</div>
-    </div>
-  ));
     return (
         <section id="home">
-            <div className="text">{letters}</div>
+            <Title text="Bienvenue sur le site des Jean Farine" />
             <div className="slider">
                 <div className="jeanfarine">
                     <h2>JEAN FARINE ?</h2>
