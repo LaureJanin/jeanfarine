@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Title from "../components/Title/Title"
 import DramaTheater from "../components/DramaTheater/DramaTheater";
 import dramas from "../assets/images/data/dramas.json";
 import croix from "../assets/images/croix.png";
@@ -20,17 +21,9 @@ function Dramas() {
     }, 800);
   }
 
-  const text = "NOS RÉALISATIONS";
-  const letters = [...text].map((letter, index) => (
-			<div className="wrapper" key={index}>
-			<div className="letter">{letter}</div>
-			<div className="shadow">{letter}</div>
-			</div>
-  ));
-
   return (
     <section id="dramas">
-      <div className="text">{letters}</div>
+      <Title text="Nos réalisations" />
       <div className="grid">
         {dramas.map((drama) => (
           <DramaTheater key={drama.id} drama={drama} onClick={() => handleClick(drama)} />
