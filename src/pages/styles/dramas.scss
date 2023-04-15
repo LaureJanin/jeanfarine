@@ -49,7 +49,7 @@
         
             h2 {
                 position: absolute;
-                top: 40%;
+                top: 25%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 1;
@@ -105,7 +105,6 @@
                     padding-top: 0;
                 }
             }
-        
         }
     }
     .closing {
@@ -134,9 +133,10 @@
         .box {      
             h2 {
                 font-size: 1.5rem;
+                top:40%;
             }
             .content {
-                top: 60%;
+                top:65%;
                 width: 85%;
                 h3 {
                     font-size: 17px;
@@ -159,4 +159,4 @@
             }
         }
     }
-  }
+}
