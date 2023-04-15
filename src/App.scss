@@ -1,4 +1,7 @@
-@import "./assets/variables";
+@font-face {
+  font-family: "Lato";
+  src: url(../src/assets/Lato-Regular.ttf);
+}
 
 * {
 	margin: 0;
@@ -9,6 +12,6 @@
 #root {
   margin: 0 auto;
   text-align: center;
-  font-family: $font-stack;
+  font-family: "Lato";
 }
 

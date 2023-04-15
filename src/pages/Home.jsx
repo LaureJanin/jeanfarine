@@ -8,8 +8,7 @@ function Home() {
             <div className="slider">
                 <div className="jeanfarine">
                     <h2>JEAN FARINE ?</h2>
-                    <p>C'est un niais, un benet. 
-                    <br />Ce terme populaire vient du théâtre de la farce, où l’acteur joue un imbécile dont la figure enfarinée lui a vallu le nom de "Jean-Farine". 
+                    <p>Ce terme populaire vient du théâtre de la farce, où l’acteur joue un imbécile dont la figure enfarinée lui a vallu le nom de <br />« Jean-Farine ». 
                     <br />Il se nomme aussi Pierrot.
                     </p>
                 </div>
@@ -20,15 +19,16 @@ function Home() {
             <div className="actualite">
                 <div className="box">
                     <h2>Qui sommes-nous ?</h2>
-                    <p>La troupe des Jean Farine a été créée en 1997 à Saint Germain Nuelles. 
-                    Amateurs passionnés de théâtre, nous jouons différentes pièces tout public dans lesquelles l'humour tient souvent le premier rôle.
+                    <p>La troupe des Jean Farine a été créée en 1997 à Saint Germain Nuelles par un groupe de parents d'élèves. 
+                    <br />Amateurs passionnés de théâtre, nous jouons différentes pièces tout public dans lesquelles l'humour tient souvent le premier rôle.
+                    <br /><br />Restez connecté pour en savoir plus. 
                     </p>
                 </div>
                 <div className="box">
                     <h2>Actualités</h2>
-                    <p>Notre nouvelle pièce en préparation, <span id="italic">Le truc du Tralala</span>, actuellement en répétition, sera jouée prochainement. 
-                    Des dates seront annoncées prochainement.
-                    Restez connecté pour en savoir plus. 
+                    <p>Nous préparons actuellement une nouvelle pièce : <span id="italic">Carré de femmes</span>, une comédie de Claude Mercadié.
+                    <br />Elle sera jouée lors de notre festival de théâtre amateur, le week-end du <span id="bold"> 24, 25, 26 novembre 2023</span>. 
+                    <br />Michelle Bernier nous aide une nouvelle fois pour la mise en scène. Une autre date sera annoncée prochainement.
                     </p>
                 </div>
             </div> 
