@@ -23,6 +23,14 @@ $press-children: 14;
             width: 40rem;
         }
     }
+    @media screen and (max-width: 650px) {
+        .articlePress {
+            align-items: center;
+            .imagePress {
+                width: 100%;
+            }
+        } 
+    }
 }
     
 
