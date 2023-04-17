@@ -57,16 +57,26 @@
     "description": "Deux jeunes gens convolent en justes noces. La famille et les amis sont réunis et le banquet commence... La mariée est fière que son homme ait bâti les meubles de leur propre 'chez eux'.<br><br>Au cours de la soirée, les invités discutent de leur vie, de leur travail et de leur condition sociale. Des tensions apparaissent alors entre les classes sociales, les riches se moquant des pauvres et les pauvres critiquant les riches.<br><br>Finalement, une bagarre éclate. Le premier jour de cette nouvelle vie sera-t-il vraiment le plus beau ?",
     "year": "2013",
     "director": "Michel Bernier",
-		"soundAndLight": "Jacques Cuingnet"
+		"soundAndLight": "Jacques Janin"
   },
   {
     "id": "7",
-    "title": "Le Jeu de l'Amour et du Hazard",
+    "title": "Le Jeu de l'Amour et du Hasard",
     "author": "Marivaux",
     "image": "photos/marivaux/JAC_2288.jpg",
     "description": "Sylvia s'inquiète du mariage arrangé que son père, Monsieur Orgon, a projeté pour elle avec Dorante, le fils d'un de ses vieux amis. Afin de mieux connaître son futur époux (qu'elle n'a jamais vu), elle obtient de son brave homme de père l'autorisation de l'observer, sous le déguisement de sa servante (Lisette).<br><br>De son côté Dorante a eu la même idée avec son valet Arlequin.<br><br>Se dessine alors un double jeu de masques qui engendre complications et quiproquos sous l'œil amusé de Monsieur Orgon et de son fils complice Mario.",
     "year": "2016",
     "director": "Karine Giraud",
 		"soundAndLight": "Dominique Barret et Thierry Dumas"
+  },
+  {
+    "id": "8",
+    "title": "Le Lavoir",
+    "author": "Dominique Durvin et Hélène Prévost",
+    "image": "photos/durvinPrevost/JAC_2970.jpg",
+    "description": "Le 2 août 1914, onze femmes, les lavandières, celles qui lavent pour les « bourgeois » se pressent au lavoir, dans ce lieu où convergent tous les cancans du quartier, par une journée qu'elles voudraient ordinaire.<br><br>Accoutumées au malheurs, promptes à s’émouvoir, à se quereller ou à se transformer en émeutières, elles sont également unies par la complicité et la solidarité.<br><br>Cette pièce a été montée avec deux comédiennes de la troupe des Jean Farine, la compagnie Le Fier Monde et le théâtre Pêle Mêle.",
+    "year": "2018",
+    "director": "Michel Bernier",
+		"soundAndLight": "René Vallognes"
   }
 ]

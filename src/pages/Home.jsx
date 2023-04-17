@@ -28,7 +28,7 @@ function Home() {
                     <h2>Actualités</h2>
                     <p>Nous préparons actuellement une nouvelle pièce : <span id="italic">Carré de femmes</span>, une comédie de Claude Mercadié.
                     <br />Elle sera jouée lors de notre festival de théâtre amateur, le week-end du <span id="bold"> 24, 25, 26 novembre 2023</span>. 
-                    <br />Michelle Bernier nous aide une nouvelle fois pour la mise en scène. Une autre date sera annoncée prochainement.
+                    <br />Michel Bernier nous aide une nouvelle fois pour la mise en scène. Une autre date sera annoncée prochainement.
                     </p>
                 </div>
             </div> 
