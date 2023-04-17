@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import Background from "./components/Background/background";
-import Home from "./pages/home";
-import History from "./pages/history";
+import Home from "./pages/Home";
+import History from "./pages/History";
 import Dramas from "./pages/Dramas";
-import PressReview from "./pages/pressReview";
-import Contact from "./pages/contact";
+import Press from "./pages/Press";
+import Contact from "./pages/Contact";
 
 import "./App.scss"
 
@@ -17,7 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/history" element={<History />} />
         <Route path="/dramas" element={<Dramas />} />
-        <Route path="/pressReview" element={<PressReview />} />
+        <Route path="/press" element={<Press />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </>

@@ -1,7 +1,6 @@
 #dramaTheater {
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.5s ease;
     position: relative;
   
     img {
@@ -25,6 +24,7 @@
         transition: opacity 0.5s ease;
     }
 }
+
 $dramaTheater-children: 14;
 @for $i from 1 through $dramaTheater-children {
     #dramaTheater:nth-child(#{$i}) {
@@ -37,6 +37,7 @@ $dramaTheater-children: 14;
       opacity: 1;
     }
 }
+
 #dramaTheater:hover .overlay {
     opacity: 1;
     color: #fedd58;
