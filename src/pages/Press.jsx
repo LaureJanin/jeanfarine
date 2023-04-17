@@ -26,6 +26,7 @@ function Press() {
                         <span className="arrow" 
                         onClick={() => {
                             toggleDrama(drama.id);
+                            handleShowArticles;
                           }}
                         >{expandedDramas.includes(drama.id) ? '▲' : '▼'}</span>
                     </h2>
