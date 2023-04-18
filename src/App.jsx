@@ -5,6 +5,7 @@ import History from "./pages/History";
 import Dramas from "./pages/Dramas";
 import Press from "./pages/Press";
 import Contact from "./pages/Contact";
+import Picture from "./components/Picture/Picture";
 
 import "./App.scss"
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/dramas" element={<Dramas />} />
         <Route path="/press" element={<Press />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/picture" element={<Picture />} />
       </Routes>
     </>
   )

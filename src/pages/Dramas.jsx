@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Title from "../components/Title/Title"
 import DramaTheater from "../components/DramaTheater/DramaTheater";
 import dramas from "../assets/images/data/dramas.json";
@@ -39,6 +40,9 @@ function Dramas() {
             <h2>{selectDrama.title}</h2>
             <div className="content">
                 <h3>Auteur(s) : {selectDrama.author}</h3>
+                <Link to="/picture">
+                    Photos
+                </Link>
                 <h3>Résumé</h3>
                 <p dangerouslySetInnerHTML={{__html: selectDrama.description}}></p>
             </div>
