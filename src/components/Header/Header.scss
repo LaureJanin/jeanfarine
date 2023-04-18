@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     .logo {
+      width: 12rem;
       &:hover {
         filter: brightness(100%) drop-shadow(0 0 0.1rem yellow);
       }
@@ -55,7 +56,7 @@
   }
   #HeadDecoration {
     position: absolute;
-    margin-top: 13rem;
+    margin-top: 14rem;
     left:0px;
     width: 100%;
     height: 3px;

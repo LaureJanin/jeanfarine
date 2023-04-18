@@ -4,6 +4,7 @@ import Title from "../components/Title/Title"
 import DramaTheater from "../components/DramaTheater/DramaTheater";
 import dramas from "../assets/images/data/dramas.json";
 import croix from "../assets/images/croix.png";
+import camera from "../assets/images/camera.png";
 import "./styles/dramas.scss";
 
 function Dramas() {
@@ -37,12 +38,13 @@ function Dramas() {
               <img src={croix} alt="close window"/>
             </button>
             <img className="imgFond" src={selectDrama.image} alt={selectDrama.title} />
-            <h2>{selectDrama.title}</h2>
             <div className="content">
-                <h3>Auteur(s) : {selectDrama.author}</h3>
+                <h2>{selectDrama.title}</h2>
+                {console.log.title}
                 <Link to="/picture">
-                    Photos
+                  <img className="camera" src={camera} alt="Gallery"/>
                 </Link>
+                <h3>Auteur(s) : {selectDrama.author}</h3>
                 <h3>Résumé</h3>
                 <p dangerouslySetInnerHTML={{__html: selectDrama.description}}></p>
             </div>

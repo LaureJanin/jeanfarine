@@ -1,0 +1,54 @@
+#picture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    .menuDeroulant {
+        .mySelect {
+            width: 25rem;
+            height: fit-content;
+            border: none;
+            background-color: transparent;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            color: beige;
+            line-height: 1rem;
+            cursor: pointer;
+            list-style-type: none;
+            
+            .myOption {
+                display: none;
+                &:first-child {
+                    display: block;
+                  }
+                text-align: center;
+                padding: 1rem;
+                width: 25rem;
+                height: 3rem;
+                color: beige;
+                font-size: 1.2rem;
+                border-radius: 0;
+                cursor: pointer;
+                background-color: rgba(54, 44, 44, 0.616);
+            }
+        
+            .myOption:hover {
+                color: #fedd58;
+            }
+        }
+        &:hover .myOption {
+            display: block;
+        }
+    }
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        img {
+            width: 30%;
+        }
+    }
+}

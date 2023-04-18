@@ -1,6 +1,6 @@
 #dramas {
    .grid {
-        width: 85%;
+        width: 95%;
         margin: auto;
         display:flex;
         flex-wrap: wrap;
@@ -17,8 +17,8 @@
             position: relative;
             top: 0;
             left: 0;
-            padding: 1rem;
-            background-image: url(../../assets/images/background.jpg);
+            // background-image: url(../../assets/images/background.jpg);
+            // padding: 1rem;
             button {
                 position: absolute;
                 top: 25px;
@@ -42,20 +42,7 @@
             }
             .imgFond {
                 width: 100%;
-                animation-name: dramasSlideInFromLeft;
-                animation-duration: 1s;
-                animation-timing-function: ease-out;
-            }
-        
-            h2 {
-                position: absolute;
-                top: 25%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 1;
-                padding-bottom: 2rem;
-                color: #fedd58;
-                font-size: 2rem;
+                height: 40%;
                 animation-name: dramasSlideInFromLeft;
                 animation-duration: 1s;
                 animation-timing-function: ease-out;
@@ -73,11 +60,13 @@
             .content {
                 background-image: url(../../assets/images/parchemin.jpg);
                 position: fixed;
-                top: 70%;
+                top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 1;
                 width: 80%;
+                height: 80%;
+                border-radius: 5px;
                 animation-name: dramasSlideInFromBottom; 
                 animation-duration: 1s; 
                 animation-timing-function: ease-out; 
@@ -90,16 +79,24 @@
                     transform: translateY() translateX();
                     }
                 }
+                h2 {
+                    color:rgb(63, 60, 60);
+                    font-size: 2rem;
+                    padding: 2rem;
+                }
+                .camera {
+                    width: 2rem;
+                }
                 h3 {
                     font-size: 22px;
-                    color:rgb(0, 0, 0);
+                    color:rgb(63, 60, 60);
                     padding: 2rem;
                     padding-bottom: 1rem;
                     text-align: start;
                 }
                 p {
                     font-size: 18px;
-                    color: black;
+                    color: rgb(63, 60, 60);
                     text-align: start;
                     padding: 2rem;
                     padding-top: 0;
