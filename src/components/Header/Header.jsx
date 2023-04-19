@@ -37,6 +37,11 @@ function Header() {
                 </Link>
             </li>
             <li>
+                <Link data-item='Galerie' to="/picture" onClick={handleShowLinks}>
+                    Galerie
+                </Link>
+            </li>
+            <li>
                 <Link data-item='Presse' to="/press" onClick={handleShowLinks}>
                     Presse
                 </Link>

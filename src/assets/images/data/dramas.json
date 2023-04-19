@@ -34,6 +34,12 @@
     "press": [
       "photos/presse/Presse_un_air_de_famille1.jpg",
       "photos/presse/presse_un_air_famille2.jpg"
+    ],
+    "pictures": [
+      "photos/jaouiBacri/Pieces_Un_air_famille2.jpg",
+      "photos/jaouiBacri/Dscn0006.jpg",
+      "photos/jaouiBacri/Un_air_de_famille1.jpg",
+      "photos/jaouiBacri/Un_air_de_famille5.jpg"
     ]
   },
   {
@@ -49,6 +55,15 @@
       "photos/presse/Presse_cantatrice1.jpg",
       "photos/presse/Presse_cantatrice2.jpg",
       "photos/presse/Presse_cantatrice3.jpg"
+    ],
+    "pictures": [
+      "photos/ionesco/DSC_9227.jpg",
+      "photos/ionesco/DSC_9208.jpg",
+      "photos/ionesco/DSC_9215.jpg",
+      "photos/ionesco/DSC_9236.jpg",
+      "photos/ionesco/DSC_9247.jpg",
+      "photos/ionesco/DSC_9250.jpg",
+      "photos/ionesco/DSC_9254.jpg"
     ]
   },
   {
@@ -62,6 +77,16 @@
 		"soundAndLight": "Jacques Janin",
     "press": [
       "photos/presse/presse_precieuses1.jpg"
+    ],
+    "pictures": [
+      "photos/moliere/IMG_1639.jpg",
+      "photos/moliere/IMG_1613.jpg",
+      "photos/moliere/IMG_1625.jpg",
+      "photos/moliere/IMG_1627.jpg",
+      "photos/moliere/IMG_1635.jpg",
+      "photos/moliere/IMG_1652.jpg",
+      "photos/moliere/IMG_1664.jpg",
+      "photos/moliere/IMG_1667.jpg"
     ]
   },
   {
@@ -76,6 +101,16 @@
     "press": [
       "photos/presse/Presse_Echafaudages-lentilly.jpg",
       "photos/presse/presse_echafaudages.jpg"
+    ],
+    "pictures": [
+      "photos/girerd/DSC_3662.jpg",
+      "photos/girerd/DSC_3649.jpg",
+      "photos/girerd/DSC_3655.jpg",
+      "photos/girerd/DSC_3673.jpg",
+      "photos/girerd/DSC_3662.jpg",
+      "photos/girerd/DSC_3686.jpg",
+      "photos/girerd/DSC_3700.jpg",
+      "photos/girerd/DSC_3656.jpg"
     ]
   },
   {
@@ -91,6 +126,20 @@
       "photos/presse/Presse_noce1.jpg",
       "photos/presse/Presse_Noce2.jpg",
       "photos/presse/Presse_Noce3.jpg"
+    ],
+    "pictures": [
+      "photos/brecht/JAC_3514.jpg",
+      "photos/brecht/JAC_3515.jpg",
+      "photos/brecht/JAC_3517.jpg",
+      "photos/brecht/JAC_3518.jpg",
+      "photos/brecht/JAC_3553.jpg",
+      "photos/brecht/JAC_3570.jpg",
+      "photos/brecht/JAC_3573.jpg",
+      "photos/brecht/JAC_3575.jpg",
+      "photos/brecht/JAC_3591.jpg",
+      "photos/brecht/JAC_3531.jpg",
+      "photos/brecht/JAC_3581.jpg",
+      "photos/brecht/JAC_3608-10.jpg"
     ]
   },
   {
@@ -105,6 +154,20 @@
     "press": [
       "photos/presse/Presse_marivaux1.jpg",
       "photos/presse/Presse_marivaux2.jpg"
+    ],
+    "pictures": [
+      
+      "photos/marivaux/JAC_2264.jpg",
+      "photos/marivaux/JAC_2275.jpg",
+      "photos/marivaux/JAC_2293.jpg",
+      "photos/marivaux/JAC_2280.jpg",
+      "photos/marivaux/JAC_2289.jpg",
+      "photos/marivaux/JAC_2288.jpg",
+      "photos/marivaux/JAC_2295.jpg",
+      "photos/marivaux/JAC_2327.jpg",
+      "photos/marivaux/JAC_2322.jpg",
+      "photos/marivaux/JAC_2299.jpg",
+      "photos/marivaux/JAC_2283.jpg"
     ]
   },
   {
@@ -115,6 +178,19 @@
     "description": "Le 2 août 1914, onze femmes, les lavandières, celles qui lavent pour les « bourgeois » se pressent au lavoir, dans ce lieu où convergent tous les cancans du quartier, par une journée qu'elles voudraient ordinaire.<br><br>Accoutumées au malheurs, promptes à s’émouvoir, à se quereller ou à se transformer en émeutières, elles sont également unies par la complicité et la solidarité.<br><br>Cette pièce a été montée avec deux comédiennes de la troupe des Jean Farine, la compagnie Le Fier Monde et le théâtre Pêle Mêle.",
     "year": "2018",
     "director": "Michel Bernier",
-		"soundAndLight": "René Vallognes"
+		"soundAndLight": "René Vallognes",
+    "pictures": [
+      "photos/durvinPrevost/JAC_2970.jpg",
+      "photos/durvinPrevost/JAC_2885.jpg",
+      "photos/durvinPrevost/JAC_2907.jpg",
+      "photos/durvinPrevost/JAC_2939.jpg",
+      "photos/durvinPrevost/JAC_2942.jpg",
+      "photos/durvinPrevost/JAC_2979.jpg",
+      "photos/durvinPrevost/JAC_2970.jpg",
+      "photos/durvinPrevost/JAC_2984.jpg",
+      "photos/durvinPrevost/JAC_2987.jpg",
+      "photos/durvinPrevost/JAC_2995.jpg",
+      "photos/durvinPrevost/JAC_3009.jpg"
+    ]
   }
 ]

@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import Title from "../components/Title/Title"
 import DramaTheater from "../components/DramaTheater/DramaTheater";
 import dramas from "../assets/images/data/dramas.json";
+import Lottie from "react-lottie-player";
 import croix from "../assets/images/croix.png";
-import camera from "../assets/images/camera.png";
+import camera from "../assets/images/lottie/camera.json";
 import "./styles/dramas.scss";
 
 function Dramas() {
@@ -42,7 +43,13 @@ function Dramas() {
                 <h2>{selectDrama.title}</h2>
                 {console.log.title}
                 <Link to="/picture">
-                  <img className="camera" src={camera} alt="Gallery"/>
+                  <div className="lottie">
+                    <Lottie
+                      loop
+                      animationData={camera}
+                      play
+                    />
+                  </div>
                 </Link>
                 <h3>Auteur(s) : {selectDrama.author}</h3>
                 <h3>Résumé</h3>

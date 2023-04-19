@@ -21,8 +21,8 @@
             // padding: 1rem;
             button {
                 position: absolute;
-                top: 25px;
-                right: 25px;
+                top: 30px;
+                right: 30px;
                 cursor: pointer;
                 background: transparent;
                 border: transparent;
@@ -30,7 +30,10 @@
                 animation-name: reveal;
                 animation-delay: 1s;
                 animation-timing-function: ease-out;
-                animation-fill-mode: forwards; 
+                animation-fill-mode: forwards;
+                img {
+                    width: 30px;
+                }
             }
             @keyframes reveal {
                 0% {
@@ -82,24 +85,25 @@
                 h2 {
                     color:rgb(63, 60, 60);
                     font-size: 2rem;
-                    padding: 2rem;
+                    padding-top: 2rem;
                 }
-                .camera {
-                    width: 2rem;
+                .lottie {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
                 h3 {
                     font-size: 22px;
                     color:rgb(63, 60, 60);
-                    padding: 2rem;
-                    padding-bottom: 1rem;
+                    padding: 1rem;
                     text-align: start;
+                    
                 }
                 p {
                     font-size: 18px;
                     color: rgb(63, 60, 60);
                     text-align: start;
-                    padding: 2rem;
-                    padding-top: 0;
+                    padding: 1rem;
                 }
             }
         }

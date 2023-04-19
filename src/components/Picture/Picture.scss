@@ -41,6 +41,12 @@
             display: block;
         }
     }
+    .lottie {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20rem;
+    }
     .gallery {
         display: flex;
         flex-wrap: wrap;
@@ -48,7 +54,23 @@
         align-items: center;
         gap: 1rem;
         img {
+            opacity: 0;
             width: 30%;
+            animation: fadeIn 1s ease-in-out forwards;;
+        }
+    
+        @keyframes fadeIn {
+            to {
+            opacity: 1;
+            }
         }
     }
+    @media (max-width: 768px) {
+        .gallery {
+            img {
+                width: 95%;
+            }
+        }
+    }
+
 }
