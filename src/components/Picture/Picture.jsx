@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Lottie from "react-lottie-player";
+import Title from "../Title/Title"
 import dramas from "../../assets/images/data/dramas.json";
-import pictures from "../../assets/images/lottie/pictures.json";
 import "./Picture.scss";
 
 function Picture() {
@@ -14,6 +13,7 @@ function Picture() {
 
   return (
     <div id="picture">
+      <Title text="Nous contacter" />
       <div className="menuDeroulant">
         <ul className="mySelect" value={selectedDrama} onClick={handleDramaChange}>
           <li className="myOption" data-title={selectedDrama || ""}>
@@ -27,17 +27,21 @@ function Picture() {
           ))}
         </ul>
       </div>
-      {selectedDrama ? (
+      {!selectedDrama ? (
+        <div className="gallery">
+          {dramas.map((drama) =>
+            drama.pictures.map((picture, index) => (
+              <img key={index} src={picture} alt={`Picture ${index}`} />
+            ))
+          )}
+        </div>
+      ) : (
         <div className="gallery">
           {dramas
             .find((drama) => drama.title === selectedDrama)
             .pictures.map((picture, index) => (
               <img key={index} src={picture} alt={`Picture ${index}`} />
             ))}
-        </div>
-      ) : (
-        <div className="lottie">
-          <Lottie loop animationData={pictures} play />
         </div>
       )}
     </div>

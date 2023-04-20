@@ -17,8 +17,6 @@
             position: relative;
             top: 0;
             left: 0;
-            // background-image: url(../../assets/images/background.jpg);
-            // padding: 1rem;
             button {
                 position: absolute;
                 top: 30px;
@@ -67,8 +65,8 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 1;
-                width: 80%;
-                height: 80%;
+                width: 80vw;
+                height: fit-content;
                 border-radius: 5px;
                 animation-name: dramasSlideInFromBottom; 
                 animation-duration: 1s; 
@@ -131,24 +129,22 @@
     #dramas {
         .fond {
             background-image: url(../../assets/images/background.jpg);
-        .box {      
-            h2 {
-                font-size: 1.5rem;
-                top:40%;
-            }
+        .box {
+           
             .content {
-                top:65%;
+                top:55%;
                 width: 85%;
+                h2 {
+                    font-size: 1.2rem;
+                }
                 h3 {
-                    font-size: 17px;
+                    font-size: 14px;
                     padding: 1rem;
-                    padding-bottom: 1rem;
                     text-align: start;
                 }
                 p {
                     font-size: 13px;
                     padding: 1rem;
-                    padding-top: 0;
                     text-align: start;
                 }
             }
