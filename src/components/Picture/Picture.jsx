@@ -13,7 +13,7 @@ function Picture() {
 
   return (
     <div id="picture">
-      <Title text="Nous contacter" />
+      <Title text="Galerie de photos" />
       <div className="menuDeroulant">
         <ul className="mySelect" value={selectedDrama} onClick={handleDramaChange}>
           <li className="myOption" data-title={selectedDrama || ""}>

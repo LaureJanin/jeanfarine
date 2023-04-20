@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
     p {
         color: #fedd58;
     }
@@ -151,6 +150,7 @@
     }
     .contactDirect {
         color:beige;
+        margin-top: 2rem;
         a {
             text-decoration: none;
             color: #fedd58bd;
