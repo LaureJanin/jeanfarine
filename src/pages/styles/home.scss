@@ -22,7 +22,7 @@
       margin-left:23rem;
       background-image: url("/photos/moliere/IMG_1625.jpg");
       background-size:cover;
-      animation: animationSlider alternate infinite 15s;
+      animation: animationSlider infinite 25s;
     .jeanfarine {
       color:beige;
       background-color: #261200b7;
@@ -46,14 +46,29 @@
   }
 
   @keyframes animationSlider {
-    33.33% {
-      background-image: url("/photos/marivaux/JAC_2280.jpg");
+    12% {
+      background-image: url("/photos/fenwick/Palmes_Schutz_a.jpg");
     }
-    66.66% {
+    25% {
+      background-image: url("/photos/jaouiBacri/Un_air_de_famille1.jpg");
+    }
+    37% {
       background-image: url("/photos/ionesco/DSC_9227.jpg");
     }
-    99.99% {
-      background-image: url("/photos/brecht/JAC_3512_2.jpg");
+    50% {
+      background-image: url("/photos/moliere/IMG_1639.jpg");
+    }
+    62% {
+      background-image: url("/photos/girerd/DSC_3686.jpg");
+    }
+    75% {
+      background-image: url("/photos/marivaux/JAC_2280.jpg");
+    }
+    87% {
+      background-image: url("/photos/ionesco/DSC_9215.jpg");
+    }
+    100% {
+      background-image: url("/photos/durvinPrevost/JAC_2939.jpg");
     }
   }
 
