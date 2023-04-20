@@ -1,12 +1,13 @@
-import Title from "../components/Title/Title"
-import "./styles/contact.scss"
+import Title from "../components/Title/Title";
+import emailjs from '@emailjs/browser';
+import "./styles/contact.scss";
 
 function Contact() {
     const sendEmail = (e) => {
         e.preventDefault();
         emailjs.sendForm(
-          "service_56x1pop",
-          "template_fn9vmmr",
+          "service_zwi9gir",
+          "template_cad2jkl",
           e.target,
           "k3bHC3Fzm7BtjTSrr"
         )
