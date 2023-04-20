@@ -42,7 +42,7 @@ function Dramas() {
             <div className="content">
                 <h2>{selectDrama.title}</h2>
                 {console.log.title}
-                <Link to="/picture">
+                <Link to={`/picture?drama=${encodeURIComponent(selectDrama.title)}`}>
                   <div className="lottie">
                     <Lottie
                       loop

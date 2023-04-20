@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Title from "../Title/Title"
 import dramas from "../../assets/images/data/dramas.json";
 import "./Picture.scss";
 
 function Picture() {
   const [selectedDrama, setSelectedDrama] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const dramaTitle = params.get("drama");
+    if (dramaTitle) {
+      setSelectedDrama(decodeURIComponent(dramaTitle));
+    }
+  }, [location.search]);
 
   function handleDramaChange(event) {
     const selectedTitle = event.target.getAttribute("data-title");
