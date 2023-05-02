@@ -5,6 +5,7 @@ import DramaTheater from "../components/DramaTheater/DramaTheater";
 import dramas from "../assets/images/data/dramas.json";
 import Lottie from "react-lottie-player";
 import croix from "../assets/images/croix.png";
+import croix2 from "../assets/images/croix2.png";
 import camera from "../assets/images/lottie/camera.json";
 import "./styles/dramas.scss";
 
@@ -40,8 +41,10 @@ function Dramas() {
             </button>
             <img className="imgFond" src={selectDrama.image} alt={selectDrama.title} />
             <div className="content">
+                <button onClick={handleClose}>
+                  <img src={croix2} alt="close window"/>
+                </button>
                 <h2>{selectDrama.title}</h2>
-                {console.log.title}
                 <Link to={`/picture?drama=${encodeURIComponent(selectDrama.title)}`}>
                   <div className="lottie">
                     <Lottie

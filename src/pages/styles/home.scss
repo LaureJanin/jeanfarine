@@ -133,6 +133,7 @@
     background-color: #261200b7;
     border-radius: 5px;
     padding: 1rem;
+    width: 50%;
       h2 {
         color: #fedd58;
         margin-bottom: 1rem;
@@ -152,14 +153,23 @@
       }
     }
   }
+
+  .affiche {
+    width: 70%;
+    padding: 1rem;
+  }
+
   @media screen and (max-width: 1000px) {
     .actualite {
       display: flex;
       flex-direction: column;
-      width: 95%;
-      .jeanfarine {
-        display: none;
+      width: 100%;
+      .box {
+        width: 95%;
       }
+    }
+    .affiche {
+      width: 95%;
     }
   }
 }

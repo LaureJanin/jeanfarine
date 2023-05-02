@@ -65,7 +65,7 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 1;
-                width: 80vw;
+                width: 85%;
                 height: fit-content;
                 border-radius: 5px;
                 animation-name: dramasSlideInFromBottom; 
@@ -79,6 +79,9 @@
                     to {
                     transform: translateY() translateX();
                     }
+                }
+                button {
+                    display:none;
                 }
                 h2 {
                     color:rgb(63, 60, 60);
@@ -125,30 +128,59 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1250px) {
     #dramas {
         .fond {
-            background-image: url(../../assets/images/background.jpg);
-        .box {
-            .content {
-                top:55%;
-                width: 85%;
-                h2 {
-                    font-size: 1.2rem;
+            overflow-y:auto;
+            .box {
+                button {
+                    display: none;
                 }
-                h3 {
-                    font-size: 14px;
-                    padding: 1rem;
-                    text-align: start;
+                .imgFond {
+                    display: none;
                 }
-                p {
-                    font-size: 13px;
-                    padding: 1rem;
-                    text-align: start;
+                .content {
+                    width: 95%;
+                    height: auto;
+                    
+                    button {
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        right:10px;
+                        cursor: pointer;
+                        background: transparent;
+                        border: transparent;
+                        opacity:0;
+                        animation-name: reveal;
+                        animation-delay: 1s;
+                        animation-timing-function: ease-out;
+                        animation-fill-mode: forwards;
+                        img {
+                            width: 25px;
+                        }
+                    }
+                    h2 {
+                        font-size: 1.2rem;
+                    }
+                    h3 {
+                        font-size: 16px;
+                        padding: 1rem;
+                        text-align: start;
+                    }
+                    p {
+                        font-size: 15px;
+                        padding: 1rem;
+                        text-align: start;
+                    }
+                }
+                @media screen and (max-width: 700px) {
+                    .content {
+                        top:95vw;
+                    }
                 }
             }
         }
-    }
         .closing {
             .box {
                 animation:none;

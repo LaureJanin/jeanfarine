@@ -1,5 +1,6 @@
-import Title from "../components/Title/Title"
-import "./styles/home.scss"
+import Title from "../components/Title/Title";
+import affiche from "/affiche-carre-de-femmes.png";
+import "./styles/home.scss";
 
 function Home() {
     return (
@@ -26,12 +27,13 @@ function Home() {
                 </div>
                 <div className="box">
                     <h2>Actualités</h2>
-                    <p>Nous préparons actuellement une nouvelle pièce : <span id="italic">Carré de femmes</span>, une comédie de Claude Mercadié.
+                    <p>Nous préparons actuellement une nouvelle pièce : <a href={affiche} download><span id="italic">Carré de femmes</span></a>, une comédie de Claude Mercadié.
                     <br />Elle sera jouée lors de notre festival de théâtre amateur, le week-end du <span id="bold"> 24, 25, 26 novembre 2023</span>. 
                     <br />Michel Bernier nous aide une nouvelle fois pour la mise en scène. Une autre date sera annoncée prochainement.
                     </p>
                 </div>
-            </div> 
+            </div>
+            <img className="affiche" src={affiche} alt="affiche de la pièce Carré de femmes mise en scène par la troupe des Jean Farine" />
         </section>
     )
 }
