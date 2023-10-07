@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Title from "../Title/Title"
 import dramas from "../../assets/images/data/dramas.json";
 import "./Picture.scss";
 
@@ -21,7 +20,7 @@ function Picture() {
 
   return (
     <div id="picture">
-      <Title text="Galerie de photos" />
+      <h1>GALERIE DE PHOTOS</h1>
       <div className="menuDeroulant">
         <ul className="mySelect" value={selectedDrama} onClick={handleDramaChange}>
           <li className="myOption" data-title={selectedDrama || ""}>

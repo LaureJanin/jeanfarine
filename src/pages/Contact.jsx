@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Title from "../components/Title/Title";
 import emailjs from '@emailjs/browser';
 import "./styles/contact.scss";
 
@@ -32,7 +31,7 @@ function Contact() {
 
     return (
         <section id="contact">
-            <Title text="Nous contacter" />
+            <h1>CONTACT</h1>
             {confirmation && <p>Merci pour votre message, nous revenons vers vous au plus vite !</p>}
             <form onSubmit={sendEmail}>
                 <div className="box1">

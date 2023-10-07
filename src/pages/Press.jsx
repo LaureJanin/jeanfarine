@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Title from "../components/Title/Title";
 import dramas from "../assets/images/data/dramas.json";
 import "./styles/press.scss"
 
@@ -18,7 +17,7 @@ function Press() {
 
     return (
         <>
-            <Title text="On en parle..." />    
+            <h1>ON EN PARLE...</h1>    
             {dramas.map((drama) => (
             <div id="press" key={drama.id}>
                     <h2 className="titleDrama">

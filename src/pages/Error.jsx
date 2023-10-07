@@ -1,12 +1,11 @@
 import Lottie from "react-lottie-player";
 import error from "../assets/images/lottie/error.json";
-import Title from "../components/Title/Title"
 import "./styles/error.scss";
 
 export default function Error() {
     return (
       <section id="notFound">
-        <Title text="Oups... Tu t'es perdu(e)" />
+        <h1>OUPS... TU T'ES PERDU(E)</h1>
         <div className="notFoundContainer">
             <Lottie
                 loop

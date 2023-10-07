@@ -13,5 +13,24 @@
   margin: 0 auto;
   text-align: center;
   font-family: "Lato";
+  h1{
+    color:#fedd58;
+    margin-bottom: 2rem;
+    font-size: 22px;
+    letter-spacing: 2px;
+    animation-name: border-anim;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+  }
+  @keyframes border-anim {
+    from {
+      clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%); 
+      }
+    to {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); 
+    }
+  }
 }
 

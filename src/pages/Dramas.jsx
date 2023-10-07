@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Title from "../components/Title/Title"
 import DramaTheater from "../components/DramaTheater/DramaTheater";
 import dramas from "../assets/images/data/dramas.json";
 import Lottie from "react-lottie-player";
@@ -27,7 +26,7 @@ function Dramas() {
 
   return (
     <section id="dramas">
-      <Title text="Nos réalisations" />
+      <h1>NOS RÉALISATIONS</h1>
       <div className="grid">
         {dramas.map((drama) => (
           <DramaTheater key={drama.id} drama={drama} onClick={() => handleClick(drama)} />

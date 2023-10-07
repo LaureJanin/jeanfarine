@@ -1,11 +1,10 @@
-import Title from "../components/Title/Title";
 import affiche from "/affiche-carre-de-femmes.png";
 import "./styles/home.scss";
 
 function Home() {
     return (
         <section id="home">
-            <Title text="Bienvenue sur le site des Jean Farine" />
+            <h1>BIENVENUE SUR LE SITE DES JEAN FARINE</h1>
             <div className="slider">
                 <div className="jeanfarine">
                     <h2>JEAN FARINE ?</h2>
