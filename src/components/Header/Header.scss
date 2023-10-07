@@ -29,6 +29,14 @@
       list-style: none;
       gap:3rem;
       li {
+        .festival {
+          color: rgb(245, 74, 188);
+          text-transform: none;
+          font-family:"arial";
+          font-style: italic;
+          font-weight: 800;
+          
+        }
         a {
           color: beige;
           font-size:18px;
@@ -181,7 +189,7 @@
       }
     }
     .heightNav {
-      height: 23rem;
+      height: 24rem;
       transition: all 1s ease-in-out;
     }
     #HeadDecoration {

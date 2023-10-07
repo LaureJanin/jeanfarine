@@ -6,6 +6,7 @@ import Dramas from "./pages/Dramas";
 import Press from "./pages/Press";
 import Contact from "./pages/Contact";
 import Picture from "./components/Picture/Picture";
+import Festival from "./pages/Festival";
 import Error from "./pages/Error";
 
 import "./App.scss"
@@ -22,6 +23,7 @@ function App() {
         <Route path="/press" element={<Press />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/picture" element={<Picture />} />
+        <Route path="/festival" element={<Festival />} />
         <Route path="/*" element={<Error />} />
       </Routes>
     </>
