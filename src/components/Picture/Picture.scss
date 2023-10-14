@@ -16,12 +16,11 @@
             line-height: 1rem;
             cursor: pointer;
             list-style-type: none;
-            
             .myOption {
                 display: none;
                 &:first-child {
                     display: block;
-                  }
+                }
                 text-align: center;
                 padding: 1rem;
                 width: 25rem;
@@ -32,7 +31,7 @@
                 cursor: pointer;
                 background-color: rgba(54, 44, 44, 0.616);
             }
-        
+            
             .myOption:hover {
                 color: #fedd58;
             }
@@ -61,7 +60,7 @@
         img {
             opacity: 0;
             width: 30%;
-            animation: fadeIn 1s ease-in-out forwards;;
+            animation: fadeIn 1s ease-in-out forwards;
         }
         $img-children: 14;
         @for $i from 1 through $img-children {

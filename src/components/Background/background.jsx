@@ -1,7 +1,7 @@
 import './background.scss'
 
 function Background() {
-    const quantity = 15;
+    const quantity = 25;
     const fireflies = [];
     for (let i = 1; i <= quantity; i++) {
         fireflies.push(<div key={i} className="firefly" />);

@@ -1,7 +1,7 @@
 import affiche from "/affiche-carre-de-femmes.png";
 import "./styles/home.scss";
 
-import boutonFestival from "../../public/bouton_festival.png";
+import boutonFestival from "/bouton_festival.png";
 
 function Home() {
   return (

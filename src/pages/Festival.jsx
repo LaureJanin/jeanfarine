@@ -1,7 +1,7 @@
 import "./styles/festival.scss";
-import afficheFestival from "../../public/affiche_festival.jpg";
-import boutonFestival from "../../public/bouton_festival.png";
-import plaquetteFestival from "../../public/Depliant_Festival_Theatre amateur_2023.pdf";
+import afficheFestival from "/affiche_festival.jpg";
+import boutonFestival from "/bouton_festival.png";
+import plaquetteFestival from "/Depliant_Festival_Theatre amateur_2023.pdf";
 
 export default function Festival() {
   return (
@@ -22,7 +22,7 @@ export default function Festival() {
             la pièce de théâtre <span id="italic"> Carré de femmes </span> de
             Claude Mercadié,
             <br />
-            samedi 25 novembre à 11h.
+            <span id="bold">samedi 25 novembre à 11h</span>.
           </p>
           <br />
           <p>
@@ -52,7 +52,7 @@ export default function Festival() {
             toutes les informations qui vont bien 😃.
           </p>
         </div>
-        <img src={afficheFestival} alt="Affiche du film"/>
+        <img src={afficheFestival} alt="Affiche du festival"/>
       </div>
     </section>
   );
