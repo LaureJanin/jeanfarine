@@ -1,7 +1,7 @@
 import "./styles/festival.scss";
 import afficheFestival from "/affiche_festival.jpg";
 import boutonFestival from "/bouton_festival.png";
-import plaquetteFestival from "/Depliant_Festival_Theatre amateur_2023.pdf";
+import plaquetteFestival from "/depliant_festival_saint_germain_nuelles.pdf";
 
 export default function Festival() {
   return (
