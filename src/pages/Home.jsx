@@ -1,7 +1,5 @@
-import affiche from "/affiche-carre-de-femmes.png";
+import affiche from "/affiche-carre-de-femmes.jpg";
 import "./styles/home.scss";
-
-import boutonFestival from "/bouton_festival.png";
 
 function Home() {
   return (
@@ -39,24 +37,16 @@ function Home() {
         <div className="box">
           <h2>Actualités</h2>
           <p>
-            Nous préparons actuellement une nouvelle pièce :{" "}
+            Nous jouons actuellement une nouvelle pièce :{" "}
             <a href={affiche} download>
               <span id="italic">Carré de femmes</span>
             </a>
             , une comédie de Claude Mercadié.
             <br />
-            Elle sera jouée lors de notre festival de théâtre amateur, le
-            week-end du <span id="bold"> 24, 25, 26 novembre 2023</span>.
+            Elle sera jouée à la salle des fêtes de Nuelles, le weekend du<span id="bold"> 3 et 4 février 2024</span>.
             <br />
             <br />
           </p>
-          <a href="https://www.helloasso.com/associations/la-treille/evenements/festival-de-theatre-amateur-2023" target="_blank" rel="noopener noreferrer">
-            <img
-              src={boutonFestival}
-              alt="Bouton"
-              style={{ width: "40%", height: "auto", border: "none", borderRadius: "5px" }}
-            />
-          </a>
         </div>
       </div>
       <img

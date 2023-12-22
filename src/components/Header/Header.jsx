@@ -27,11 +27,6 @@ function Header() {
       <nav className={`${showLinks ? "heightNav " : ""}`}>
         <ul className={`${showLinks ? "show-nav " : ""}`}>
           <li>
-            <Link className="festival" to="/festival" onClick={handleShowLinks}>
-              💥Festival de théâtre - Saint Germain Nuelles
-            </Link>
-          </li>
-          <li>
             <Link data-item="Histoire" to="/history" onClick={handleShowLinks}>
               Histoire
             </Link>
