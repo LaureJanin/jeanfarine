@@ -192,5 +192,23 @@
       "photos/durvinPrevost/JAC_2995.jpg",
       "photos/durvinPrevost/JAC_3009.jpg"
     ]
+  },
+  {
+    "id": "9",
+    "title": "Carré de femmes",
+    "author": "Claude Mercadié",
+    "image": "photos/mercadie/carre-de-femme2.jpg",
+    "description": "Paul Henri est le fils obéissant et coincé de Maryvonne, une mère autoritaire, et le fiancé perpétuel de Marie-Cécile, une femme non moins autoritaire. Il écrit des romans de gare. Sa mère, qui lui servait de secrétaire, meurt. Il engage pour la remplacer Karine, une jeune femme tonique et libérée.",
+    "year": "2023",
+    "director": "Collective avec l'aide de Jacques Janin",
+		"soundAndLight": "Jacques Janin et Jacques Cuingnet",
+    "pictures": [
+      "photos/mercadie/carre-de-femme1.jpg",
+      "photos/mercadie/carre-de-femme2.jpg",
+      "photos/mercadie/carre-de-femme3.jpg",
+      "photos/mercadie/carre-de-femme4.jpg",
+      "photos/mercadie/carre-de-femme5.jpg",
+      "photos/mercadie/karine.jpg"
+    ]
   }
 ]

@@ -1,4 +1,3 @@
-import affiche from "/affiche-carre-de-femmes.jpg";
 import "./styles/home.scss";
 
 function Home() {
@@ -24,8 +23,9 @@ function Home() {
         <div className="box">
           <h2>Qui sommes-nous ?</h2>
           <p>
-            La troupe des Jean Farine a été créée en 1997 à Saint Germain
+            La troupe Les Jean Farine a été créée en 1997 à Saint Germain
             Nuelles par un groupe de parents d'élèves.
+            <br />
             <br />
             Amateurs passionnés de théâtre, nous jouons différentes pièces tout
             public dans lesquelles l'humour tient souvent le premier rôle.
@@ -37,23 +37,19 @@ function Home() {
         <div className="box">
           <h2>Actualités</h2>
           <p>
-            Nous jouons actuellement une nouvelle pièce :{" "}
-            <a href={affiche} download>
-              <span id="italic">Carré de femmes</span>
+          L'association Les Jean Farine organise un évènement le <span id="bold">9 novembre 2024</span> pour témoigner de sa solidarité et apporter un soutien financier aux <span id="bold">jeunes filles et femmes afghanes</span>, privées de leurs droits
+          fondamentaux.
+          <br />
+          <br />
+          <span id="bold">Au programme :</span> ateliers créatifs, exposition, chorale, conférence et spectacle.
+          <br />
+          <br />
+            <a href="./afghanes" target="_blank">
+              <span id="italic">Cliquer ici pour en savoir plus</span>
             </a>
-            , une comédie de Claude Mercadié.
-            <br />
-            Elle sera jouée à la salle des fêtes de Nuelles, le weekend du<span id="bold"> 3 et 4 février 2024</span>.
-            <br />
-            <br />
           </p>
         </div>
       </div>
-      <img
-        className="affiche"
-        src={affiche}
-        alt="affiche de la pièce Carré de femmes mise en scène par la troupe des Jean Farine"
-      />
     </section>
   );
 }
