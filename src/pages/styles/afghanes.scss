@@ -129,11 +129,12 @@
             line-height: 1.6;
             margin-bottom: 20px;
             color: #555;
-            em {
-                color: #1a327a;
-                font-style: normal;
-                font-weight: bold;
-              }
+          }
+
+          em {
+            color: #1a327a;
+            font-style: normal;
+            font-weight: bold;
           }
 
           ul {
@@ -206,6 +207,19 @@
       p {
         color: #555;
       }
+
+      .book-section {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin: auto;
+        width: 90%;
+        padding-bottom: 2rem;
+
+          p {
+            text-align: left;
+          }
+      }        
     }
   }
   .footer {
@@ -236,7 +250,25 @@
   /* Responsive Styles */
   @media (max-width: 768px) {
     .container {
-      padding: 20px;
+      padding: 10px;
+
+      .header {
+        .main-title {
+          font-size: 1.5rem;
+        }
+      }
+
+      .event-section {
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
+
+      .radio-section {
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
   
       .event-section .event-content {
         flex-direction: column;
@@ -247,6 +279,13 @@
           .cta-button {
             width: 100%;
           }
+        }
+      }
+      .radio-section .book-section {
+        flex-direction: column;
+        
+        p {
+          text-align: center;
         }
       }
     }
