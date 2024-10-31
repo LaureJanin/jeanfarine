@@ -139,6 +139,7 @@
         color: #fedd58;
         margin-bottom: 1rem;
       }
+
       p {
         width: 100%;
         #italic {
@@ -152,9 +153,23 @@
           color: #fedd58;
         }
         a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
           text-decoration: none;
+          transition: transform 0.3s ease;
+          img {
+            width: 100%;
+            max-width: 70px;
+            height: 70px;
+          }
+        }
+        a:hover {
+          transform: scale(1.1);
         }
       }
+      
     }
   }
 
