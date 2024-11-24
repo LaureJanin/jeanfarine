@@ -134,14 +134,13 @@
     border-radius: 5px;
     padding: 1rem;
     width: 50%;
-    height:min-content;
+    display: flex; 
+    flex-direction: column;
       h2 {
         color: #fedd58;
         margin-bottom: 1rem;
       }
-
       p {
-        width: 100%;
         #italic {
           font-family:"arial";
           font-style: italic;
@@ -152,24 +151,7 @@
           font-weight: 700;
           color: #fedd58;
         }
-        a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 1rem;
-          text-decoration: none;
-          transition: transform 0.3s ease;
-          img {
-            width: 100%;
-            max-width: 70px;
-            height: 70px;
-          }
-        }
-        a:hover {
-          transform: scale(1.1);
-        }
       }
-      
     }
   }
 
