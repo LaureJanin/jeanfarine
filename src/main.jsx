@@ -14,8 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         {/* Route pour la page indépendante sans Header et Footer */}
         <Route path="/afghanes" element={<Afghanes />} />
-
-        {/* Les routes avec Header et Footer */}
+        
         <Route 
           path="*" 
           element={
