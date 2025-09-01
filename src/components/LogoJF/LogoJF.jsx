@@ -1,87 +1,137 @@
-// src/components/BrushRevealLogo.jsx
-export default function BrushRevealLogo({
-                                            mode = "text",     // "text" | "mask"
-                                            width = 220,
-                                            height = 60,
-                                            color = "#fedd58",
-                                            title = "Jean Farine",
-                                            className = "",
-                                        }) {
-    const viewW = 220;
-    const viewH = 60;
 
+export default function LogoJF({
+                                   width = 220,
+                                   height = 220,
+                                   className = "",
+                                   title = "Jean Farine",
+                               }) {
     return (
         <svg
-            className={`brush-reveal ${className}`}
-            viewBox={`0 0 ${viewW} ${viewH}`}
+            className={`logo-jf ${className}`}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 800 800"
             width={width}
             height={height}
             role="img"
             aria-label={title}
         >
-            <title>{title}</title>
-
+            {/*<title>{title}</title>*/}
+            <rect id="hoverTrigger" width="800" height="800" fill="transparent" />
             <defs>
-                {/* Masque de révélation : un rect qu’on scale en X au hover */}
-                <mask id="revealMask">
-                    <rect width="100%" height="100%" fill="black" />
-                    <rect
-                        className="clip-wipe"
-                        x="0"
-                        y="0"
-                        width="100%"
-                        height="100%"
-                        fill="white"
-                    />
+                {/* Mask definition */}
+                <mask id="maskReveal">
+                    <rect x="0" y="0" width="800" height="800" fill="white" />
+                    <rect x="-800" y="0" width="800" height="160" fill="black">
+                        <animate
+                            attributeName="x"
+                            from="-800"
+                            to="800"
+                            dur="1.5s"
+                            begin="0s; hoverTrigger.mouseover"
+                            fill="freeze"
+                        />
+                    </rect>
+                    <rect x="-800" y="160" width="800" height="160" fill="black">
+                        <animate
+                            attributeName="x"
+                            from="-800"
+                            to="800"
+                            dur="1.5s"
+                            begin="0.3s;hoverTrigger.mouseover+0.3s"
+                            fill="freeze"
+                        />
+                    </rect>
+                    <rect x="-800" y="320" width="800" height="160" fill="black">
+                        <animate
+                            attributeName="x"
+                            from="-800"
+                            to="800"
+                            dur="1.5s"
+                            begin="0.6s;hoverTrigger.mouseover+0.6s"
+                            fill="freeze"
+                        />
+                    </rect>
+                    <rect x="-800" y="480" width="800" height="160" fill="black">
+                        <animate
+                            attributeName="x"
+                            from="-800"
+                            to="800"
+                            dur="1.5s"
+                            begin="0s;hoverTrigger.mouseover"
+                            fill="freeze"
+                        />
+                    </rect>
+                    <rect x="-800" y="640" width="800" height="160" fill="black">
+                        <animate
+                            attributeName="x"
+                            from="-800"
+                            to="800"
+                            dur="1.5s"
+                            begin="0s;hoverTrigger.mouseover"
+                            fill="freeze"
+                        />
+                    </rect>
                 </mask>
+
+                {/* Circle clip for mask */}
+                <clipPath id="maskClip">
+                    <circle cx="400" cy="380" r="280" />
+                </clipPath>
             </defs>
 
-            {/* (facultatif) un léger trait “pinceau” permanent en fond */}
-            <path
-                d="M8 42 C 70 34, 150 28, 208 26"
-                stroke={color}
-                strokeWidth="3"
-                strokeLinecap="round"
-                fill="none"
-                opacity="0.3"
+            {/* Mask image with reveal animation */}
+            <image
+                href="/logo_JF.png"
+                x="100"
+                y="80"
+                width="600"
+                height="600"
+                clipPath="url(#maskClip)"
+                mask="url(#maskReveal)"
             />
 
-            {/* Contenu révélé */}
-            <g mask="url(#revealMask)">
-                {mode === "text" ? (
-                    <text
-                        x="10"
-                        y="30"
-                        fill={color}
-                        fontFamily="Lato, system-ui, sans-serif"
-                        fontSize="22"
-                        fontWeight="900"
-                        letterSpacing="1.5"
-                    >
-                        JEAN FARINE
-                    </text>
-                ) : (
-                    // petit masque comédie minimal
-                    <g transform="translate(88,10)" stroke={color} fill="none" strokeWidth="2" strokeLinecap="round">
-                        <ellipse cx="22" cy="20" rx="20" ry="22" />
-                        <path d="M14 18 q4 -4 8 0 M24 18 q4 -4 8 0" />
-                        <path d="M14 28 q8 6 16 0" />
-                    </g>
-                )}
-            </g>
-
-            {/* Pinceau (se déplace au hover) */}
-            <g className="brush" transform="translate(6,18)">
-                {/* manche */}
-                <path d="M0 10 L84 0 L88 10 L4 20 Z" fill="#e0463c" />
-                {/* virole */}
-                <rect x="80" y="1.5" width="10" height="10" rx="2" fill="#2c2c2c" />
-                {/* poils */}
-                <path
-                    d="M90 3 C102 3,108 8,110 13 C108 18,103 21,96 20 C90 19,88 14,90 3Z"
-                    fill={color}
+            {/* Circular brush effect */}
+            <circle
+                cx="400"
+                cy="380"
+                r="290"
+                stroke="#fedd58"
+                strokeWidth="2"
+                fill="none"
+                strokeDasharray="1820"
+                strokeDashoffset="1820"
+            >
+                <animate
+                    attributeName="stroke-dashoffset"
+                    from="1820"
+                    to="0"
+                    dur="3s"
+                    begin="0s;hoverTrigger.mouseover"
+                    fill="freeze"
                 />
-            </g>
+            </circle>
+
+            {/* Text that appears at the end */}
+            {/*<text*/}
+            {/*    x="50%"*/}
+            {/*    y="95%"*/}
+            {/*    textAnchor="middle"*/}
+            {/*    fontFamily="Lato, sans-serif"*/}
+            {/*    fontSize="32"*/}
+            {/*    fontWeight="bold"*/}
+            {/*    fill="#fedd58"*/}
+            {/*    opacity="0"*/}
+            {/*>*/}
+            {/*    JEAN FARINE*/}
+            {/*    <animate*/}
+            {/*        attributeName="opacity"*/}
+            {/*        from="0"*/}
+            {/*        to="1"*/}
+            {/*        dur="1s"*/}
+            {/*        begin="4s"*/}
+            {/*        fill="freeze"*/}
+            {/*    />*/}
+            {/*</text>*/}
         </svg>
     );
 }

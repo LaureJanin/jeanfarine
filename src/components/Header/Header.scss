@@ -11,18 +11,15 @@
     display: flex;
     align-items: center;
     .logo-mobile { display: none; }
-    .logo-desktop {
-      width: 12rem;
-      &:hover {
-        filter: brightness(100%) drop-shadow(0 0 0.1rem yellow);
-      }
-    }
+    .logo-desktop { display: block}
     .burger {
       background-color: transparent;
       border: none;
     }
   }
   nav {
+    position: relative;
+
     ul {
       display: flex;
       justify-content: space-around;
@@ -62,27 +59,27 @@
         }
       }
     }
-  }
-  #HeadDecoration {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    margin-top: 11rem;
-    margin-bottom: 0;
-    animation-name: border-anim;
-    animation-duration: 2s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-    background: linear-gradient(
-      270deg,
-      rgba(233, 68, 68, 0) 12.24%,
-      yellow 49.95%,
-      rgba(233, 68, 68, 0) 90.93%
-     );
 
-    @media screen and (min-width: 1020px) {
-      margin-bottom: 3.5rem;
+    #HeadDecoration {
+      position: absolute;
+      top: 5rem;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background:
+        linear-gradient(
+          270deg,
+          rgba(233, 68, 68, 0) 0%,
+          yellow 20%,
+          yellow 50%,
+          yellow 70%,
+          rgba(233, 68, 68, 0) 100%
+      );
     }
+      //@media screen and (min-width: 1020px) {
+      //  margin-bottom: 3.5rem;
+      //}
+
   }
 }
 
@@ -211,8 +208,7 @@
       transition: all 1s ease-in-out;
     }
     #HeadDecoration {
-      position: relative;
-      margin-top: 0;
+       display: none;
     }
   }
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "/logo_jf.png";
+import LogoJF from "../LogoJF/LogoJF";
+// import logo from "/logo_jf.png";
 
 import "./Header.scss";
 
@@ -14,7 +15,7 @@ function Header() {
     <section id="header">
       <div className="header">
         <Link to="/">
-          <img className="logo-desktop" src={logo} alt="logo jean farine" width={150} />
+          <LogoJF className="logo-desktop" width={220} />
           <span className="logo-mobile" aria-label="Accueil"></span>
         </Link>
         <button type="button" className="burger" onClick={handleShowLinks}>
@@ -58,9 +59,10 @@ function Header() {
             </Link>
           </li>
         </ul>
+
+        <div id="HeadDecoration"></div>
       </nav>
 
-      <div id="HeadDecoration"></div>
     </section>
   );
 }
