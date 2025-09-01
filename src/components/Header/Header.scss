@@ -6,11 +6,12 @@
   animation-duration: 2s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  margin:1rem;
+  margin:1rem ;
   .header {
     display: flex;
     align-items: center;
-    .logo {
+    .logo-mobile { display: none; }
+    .logo-desktop {
       width: 12rem;
       &:hover {
         filter: brightness(100%) drop-shadow(0 0 0.1rem yellow);
@@ -35,7 +36,7 @@
           font-family:"arial";
           font-style: italic;
           font-weight: 800;
-          
+
         }
         a {
           color: beige;
@@ -65,8 +66,8 @@
   #HeadDecoration {
     position: absolute;
     width: 100%;
-    height: 3px;
-    margin-top: 10rem;
+    height: 2px;
+    margin-top: 11rem;
     margin-bottom: 0;
     animation-name: border-anim;
     animation-duration: 2s;
@@ -78,7 +79,7 @@
       yellow 49.95%,
       rgba(233, 68, 68, 0) 90.93%
      );
-        
+
     @media screen and (min-width: 1020px) {
       margin-bottom: 3.5rem;
     }
@@ -87,21 +88,38 @@
 
 @keyframes border-anim {
   from {
-    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%); 
+    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
     }
   to {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
 }
-  
+
 @media (max-width: 768px) {
   #header {
     display: block;
     .header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       gap:3rem;
+      .logo-desktop { display: none; }
+      .logo-mobile {
+        display: block;
+        width: 32px;
+        height: 32px;
+
+        background-image: url("data:image/svg+xml;utf8,<svg fill='%23fedd58' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M10.5 2.7a2 2 0 0 1 3 0l7 7A2 2 0 0 1 20.7 12H20v8a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-5h-4v5a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2v-8h-.7a2 2 0 0 1-.8-2.3l7-7Z'/></svg>");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        &:hover {
+          filter: drop-shadow(0 0 0.15rem #fedd58);
+          transform: scale(1.05);
+          transition: transform .2s ease, filter .2s ease;
+        }
+      }
       .burger {
         padding: 0;
         width: 30px;
@@ -129,11 +147,11 @@
         .burger-bar::before {
           transform: translateY(-12px);
         }
-        
+
         .burger-bar::after {
           transform: translateY(12px);
         }
-        
+
         .burger-bar-checked,
         .burger-bar-checked::before,
         .burger-bar-checked::after {

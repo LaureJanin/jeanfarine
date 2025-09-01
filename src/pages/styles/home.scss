@@ -1,17 +1,17 @@
 #home {
-  opacity: 0; 
-  animation-name: slideInFromBottom; 
-  animation-duration: 1.5s; 
-  animation-timing-function: ease-out; 
-  animation-fill-mode: forwards; 
+  opacity: 0;
+  animation-name: slideInFromBottom;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 
   @keyframes slideInFromBottom {
     from {
-      opacity: 0; 
-      transform: translateY(40px); 
+      opacity: 0;
+      transform: translateY(40px);
     }
     to {
-      opacity: 1; 
+      opacity: 1;
       transform: translateY(0), scale(1.1);
     }
   }
@@ -94,82 +94,205 @@
     }
   }
 
-  .titre h2 {
-    text-align: center;
-    color:#fedd58; 
-    text-transform: uppercase;
+  .qui-sommes-nous-message {
+    position: relative;
     width: 70%;
-    margin-top: 3rem ;
-    margin-right: auto;
-    margin-left: auto;
-    display: grid;
-    grid-template-columns: 1fr max-content 1fr;
-    grid-template-rows: 27px 0;
-    grid-gap: 2rem;
-    align-items: center;
+    margin: 2rem auto;
+    background-color: #261200b7;
+    border: 1px solid #fedd58;
+    border-left: 10px solid #fedd58;
+    border-radius: 8px;
+    animation: slideInFromTop 0.5s ease-out;
+
+    .nom {
+      font-weight: 700;
+      color: #fedd58;
+    }
   }
-    
-  .titre h2:after,.titre h2:before {
-    content: " ";
-    display: block;
-    border-bottom: 1px solid beige;
-    border-top: 1px solid beige;
-    height: 5px;
+
+  .message-content {
+    padding: 1.5rem 3rem 1.5rem 1.5rem;
+    p {
+      color: beige;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #fedd58;
+    font-size: 1.5rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    line-height: 1;
+
+    &:hover {
+      background-color: rgba(254, 221, 88, 0.1);
+      color: beige;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @media screen and (max-width: 1000px) {
-    .titre h2 {
-      width: 80%;
-    }
-  }
-  
-  .actualite {
-    display: flex;
-    width: 70%;
-    margin: 0 auto;
-    padding: 1rem;
-    gap:2rem;
-    .box {
-    background-color: #261200b7;
-    border-radius: 5px;
-    padding: 1rem;
-    width: 50%;
-    display: flex; 
-    flex-direction: column;
-      h2 {
-        color: #fedd58;
-        margin-bottom: 1rem;
-      }
-      p {
-        #italic {
-          font-family:"arial";
-          font-style: italic;
-          color: #fedd58;
-        }
-        #bold {
-          font-family:"arial";
-          font-weight: 700;
-          color: #fedd58;
-        }
-      }
+    .qui-sommes-nous-message {
+      display: none !important;
     }
   }
 
-  .affiche {
-    width: 50%;
+  @media screen and (max-width: 1250px) and (min-width: 1001px) {
+    .qui-sommes-nous-message {
+      width: 85%;
+    }
+  }
+
+  .actualite {
+    position: relative;
+    width: 80%;
+    margin: 2rem auto;
+    animation: slideInFromTop 0.5s ease-out;
+
+    h2 {
+      color: #fedd58;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 900;
+    }
+
+    .box.two-columns {
+      display: flex;
+      gap: 2rem;
+
+      .photo {
+        flex: 1;
+
+        img {
+          width: 100%;
+          border-radius: 8px;
+        }
+      }
+
+      .infos {
+        flex: 1;
+        color: beige;
+        background-color: #261200b7;
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: left !important;
+
+        h3 {
+          color: #fedd58;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          margin-bottom: 1rem;
+          line-height: 1.5;
+        }
+
+        .auteurs, .dates, .duree-tarif, .lieu {
+          margin: 2rem 0;
+
+          p {
+            margin-bottom: 0;
+          }
+        }
+
+        .auteurs {
+          .nom {
+            font-weight: 700;
+            color: #fedd58;
+          }
+        }
+
+        .dates {
+          p {
+            font-weight: 700;
+          }
+        }
+
+        .lieu {
+          .nom {
+            font-weight: 700;
+            color: #fedd58;
+          }
+        }
+
+        .duree-tarif {
+          .nom {
+            font-weight: 700;
+            color: #fedd58;
+          }
+        }
+
+        .resume {
+          margin-top: 1rem;
+          font-style: italic;
+        }
+
+        .button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .button-reservation {
+            display: inline-block;
+            align-self: center;
+            padding: 0.5rem 1rem;
+            background-color: #fedd58;
+            color: #261200;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+            margin: 1rem;
+
+            &:hover {
+              background-color: #e6c84a;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
   }
 
   @media screen and (max-width: 1000px) {
     .actualite {
-      display: flex;
-      flex-direction: column;
       width: 100%;
-      .box {
-        width: 95%;
+      .box.two-columns {
+        flex-direction: column;
+
+        .photo img {
+          max-width: 100%;
+        }
       }
-    }
-    .affiche {
-      width: 95%;
     }
   }
 }
