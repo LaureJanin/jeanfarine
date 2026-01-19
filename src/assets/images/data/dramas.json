@@ -210,5 +210,35 @@
       "photos/mercadie/carre-de-femme5.jpg",
       "photos/mercadie/karine.jpg"
     ]
+  },
+  {
+    "id": "10",
+    "title": "Tous mes rêves partent de gare d'Austerlitz",
+    "author": "Mohamed Kacimi",
+    "image": "photos/kacimi/IMG_1880.jpeg",
+    "description": "Dans la bibliothèque d'une prison, des femmes se retrouvent pour partager un repas de Noël. Entre éclats de rire, confidences et tensions, elles s'inventent un moment d'évasion. L'arrivée d'une nouvelle détenue vient bousculer l'équilibre du groupe. Un huis clos sensible et puissant qui s'affranchit, le temps d'une soirée, de l'enfermement.",
+    "year": "2025",
+    "director": "Catherine Albaladejo",
+		"soundAndLight": "Jacques Janin et Jacques Cuingnet",
+    "pictures": [
+      "photos/kacimi/IMG_1730.jpeg",
+      "photos/kacimi/IMG_1773.jpeg",
+      "photos/kacimi/IMG_1819.jpeg",
+      "photos/kacimi/IMG_1861.jpeg",
+      "photos/kacimi/IMG_1880.jpeg",
+      "photos/kacimi/IMG_1925.jpeg",
+      "photos/kacimi/JAC_2856_DxO.jpg",
+      "photos/kacimi/JAC_2861_DxO.jpg",
+      "photos/kacimi/JAC_2898_DxO.jpg",
+      "photos/kacimi/JAC_2900_DxO.jpg",
+      "photos/kacimi/JAC_3017_DxO.jpg",
+      "photos/kacimi/JAC_3140_DxO.jpg",
+      "photos/kacimi/JAC_3156_DxO.jpg"
+    ],
+    "videos": [
+      "videos/kacimi/kacimi1.mp4",
+      "videos/kacimi/kacimi2.mp4",
+      "videos/kacimi/kacimi3.mp4"
+    ]
   }
 ]

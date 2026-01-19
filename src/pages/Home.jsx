@@ -1,17 +1,48 @@
 import "./styles/home.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import dramas from "../assets/images/data/dramas.json";
 
 function Home() {
   const [isQuiSommesNousVisible, setIsQuiSommesNousVisible] = useState(true);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const closeQuiSommesNous = () => {
     setIsQuiSommesNousVisible(false);
   };
 
+  // Images sélectionnées pour le slider
+  const sliderImages = [
+    "photos/fenwick/Palmes_Schutz_c.jpg",
+    "photos/jaouiBacri/Pieces_Un_air_famille2.jpg",
+    "photos/ionesco/DSC_9227.jpg",
+    "photos/moliere/IMG_1639.jpg",
+    "photos/girerd/DSC_3662.jpg",
+    "photos/brecht/JAC_3512_2.jpg",
+    "photos/marivaux/JAC_2288.jpg",
+    "photos/durvinPrevost/JAC_2970.jpg",
+    "photos/mercadie/carre-de-femme2.jpg",
+    "photos/kacimi/IMG_1861.jpeg"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [sliderImages.length]);
+
   return (
       <section id="home">
         <h1>BIENVENUE SUR LE SITE DES JEAN FARINE</h1>
         <div className="slider">
+          {sliderImages.map((image, index) => (
+            <div
+              key={index}
+              className={`slide ${index === currentSlide ? 'active' : ''}`}
+              style={{ backgroundImage: `url("${image}")` }}
+            />
+          ))}
           <div className="jeanfarine">
             <h2>JEAN FARINE ?</h2>
             <p>
@@ -48,7 +79,7 @@ function Home() {
                    alt="Tous mes rêves partent de gare d’Austerlitz" />
             </div>
             <div className="infos">
-              <h3>Tous mes rêves partent de gare d’Austerlitz</h3>
+              <h3>En ce moment : Tous mes rêves partent de gare d’Austerlitz</h3>
               <div className="auteurs">
                 <p>
                   Une pièce de : <span className="nom">Mohamed Kacimi</span>
@@ -59,7 +90,7 @@ function Home() {
               </div>
 
 
-              <div className="dates">
+              {/* <div className="dates">
                 <p>Samedi 29 novembre 2025 - 20h30</p>
                 <p>Dimanche 30 novembre 2025 - 15h</p>
               </div>
@@ -68,10 +99,10 @@ function Home() {
                 <p className="nom">Salle des fêtes de Nuelles</p>
                 <p>Esplanade des Anciens Combattants</p>
                 <p>SAINT GERMAIN NUELLES</p>
-              </div>
+              </div> */}
 
               <div className="duree-tarif">
-                <p>Durée : <span className="nom">90 min</span> – Tarif : <span className="nom">10 €</span></p>
+                <p>Durée : <span className="nom">90 min</span></p>
                 <p>Pièce déconseillée aux moins de 12 ans</p>
               </div>
 
@@ -82,7 +113,7 @@ function Home() {
                 Un huis clos sensible et puissant qui s'affranchit, le temps d'une soirée, de l'enfermement.
               </p>
 
-              <div className="button">
+              {/* <div className="button">
                 <a
                   href="https://www.helloasso.com/associations/les-jean-farine/evenements/tous-mes-reves-partent-de-gare-d-austerlitz"
                   target="_blank"
@@ -92,7 +123,7 @@ function Home() {
                 >
                   Réservez vos places
                 </a>
-              </div>
+              </div> */}
 
               <p>Renseignements : 06 52 18 45 40 </p>
             </div>
