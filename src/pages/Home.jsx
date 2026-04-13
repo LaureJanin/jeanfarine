@@ -75,12 +75,14 @@ function Home() {
 
           <div className="box two-columns">
             <div className="photo">
-              <img src="affiche-tous-mes-reves-partent-de-gare-austerlitz.png"
-                   alt="Tous mes rêves partent de gare d’Austerlitz" />
+              <img
+                src="affiche-tous-mes-reves-partent-de-gare-austerlitz.png"
+                alt="Affiche : Tous mes rêves partent de gare d’Austerlitz, pièce de Mohamed Kacimi, Cie Les Jean Farine à Lentilly les 16 et 23 avril 2026."
+              />
             </div>
             <div className="infos">
               <h3>En ce moment : Tous mes rêves partent de gare d’Austerlitz</h3>
-              <div className="auteurs">
+                            <div className="auteurs">
                 <p>
                   Une pièce de : <span className="nom">Mohamed Kacimi</span>
                 </p>
@@ -89,33 +91,34 @@ function Home() {
                 </p>
               </div>
 
-
-              {/* <div className="dates">
-                <p>Samedi 29 novembre 2025 - 20h30</p>
-                <p>Dimanche 30 novembre 2025 - 15h</p>
+              <div className="dates">
+                <p>Jeudis 16 avril et 23 avril 2026 à 20h</p>
               </div>
 
               <div className="lieu">
-                <p className="nom">Salle des fêtes de Nuelles</p>
-                <p>Esplanade des Anciens Combattants</p>
-                <p>SAINT GERMAIN NUELLES</p>
-              </div> */}
+                <p className="nom">Espace culturel La Passerelle</p>
+                <p>15 rue Chatelard Dru</p>
+                <p>LENTILLY</p>
+              </div>
 
               <div className="duree-tarif">
                 <p>Durée : <span className="nom">90 min</span></p>
-                <p>Pièce déconseillée aux moins de 12 ans</p>
+                <p>À partir de 14 ans</p>
+                <p>
+                  Tarif : <span className="nom">5 €</span> sur HelloAsso,{" "}
+                  <span className="nom">8 €</span> sur place
+                </p>
               </div>
 
               <p className="resume">
-                Dans la bibliothèque d’une prison, des femmes se retrouvent pour partager un repas
-                de Noël. Entre éclats de rire, confidences et tensions, elles s’inventent un moment
-                d’évasion. L’arrivée d’une nouvelle détenue vient bousculer l’équilibre du groupe.
-                Un huis clos sensible et puissant qui s'affranchit, le temps d'une soirée, de l'enfermement.
+                « Tranches de vie de femmes en prison mais où l’humour reste de mise. » Dans la
+                bibliothèque d’une prison, des femmes se retrouvent pour partager un repas de Noël.
+                Entre éclats de rire, confidences et tensions, elles s’inventent un moment d’évasion.
               </p>
 
-              {/* <div className="button">
+              <div className="button">
                 <a
-                  href="https://www.helloasso.com/associations/les-jean-farine/evenements/tous-mes-reves-partent-de-gare-d-austerlitz"
+                  href="https://www.helloasso.com/associations/les-jean-farine/evenements/tous-mes-reves-partent-de-gare-d-austerlitz-2"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="button-reservation"
@@ -123,9 +126,9 @@ function Home() {
                 >
                   Réservez vos places
                 </a>
-              </div> */}
+              </div>
 
-              <p>Renseignements : 06 52 18 45 40 </p>
+              <p>Renseignements : jeanfarine.fr — 06 52 18 45 40</p>
             </div>
           </div>
         </div>
