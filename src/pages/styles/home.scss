@@ -12,15 +12,26 @@
     }
     to {
       opacity: 1;
-      transform: translateY(0), scale(1.1);
+      transform: translateY(0);
     }
   }
 
   .slider {
+      // La légende déborde de --debord sur la gauche de la photo. On centre
+      // l'ensemble « débord + photo », sinon la composition penche à droite.
+      --largeur: min(56vw, 980px);
+      --debord: clamp(5rem, 8vw, 10rem);
+
       position: relative;
-      height: 30vw;
-      width: 60vw;
-      margin-left:23rem;
+      width: var(--largeur);
+      margin-left: calc((100% - var(--largeur) + var(--debord)) / 2);
+      margin-right: auto;
+
+    .slides {
+      position: relative;
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+    }
 
     .slide {
       position: absolute;
@@ -31,20 +42,60 @@
       background-size: cover;
       background-position: center 40%;
       opacity: 0;
-      transition: opacity 1.5s ease-in-out;
+      // Échelle de repos = état final du zoom, pour que la photo sortante ne
+      // fasse pas un saut au moment où elle perd la classe active.
+      transform: scale(1.07);
+      transition: opacity 2s ease-in-out;
 
       &.active {
         opacity: 1;
+        animation: kenBurns 8s ease-out forwards;
+      }
+    }
+
+    .pastilles {
+      display: flex;
+      justify-content: center;
+      gap: 2px;
+      margin-top: 0.7rem;
+
+      button {
+        // Barre fine visible dans une zone de clic confortable. Le flex-basis
+        // se comprime plutôt que de déborder quand la photo est étroite.
+        display: block;
+        flex: 0 1 34px;
+        height: 22px;
+        padding: 10px 3px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          display: block;
+          height: 2px;
+          background-color: #fedd5866;
+          transition: background-color 0.4s ease;
+        }
+
+        &:hover::before {
+          background-color: #fedd58b3;
+        }
+
+        &.active::before {
+          background-color: #fedd58;
+        }
       }
     }
 
     .jeanfarine {
-      position: relative;
+      position: absolute;
+      top: 28%;
+      left: calc(var(--debord) * -1);
       z-index: 10;
       color:beige;
       background-color: #261200b7;
       width: 17em;
-      transform: translate(-10rem, 120px);
       padding: 1rem;
       display: flex;
       flex-direction: column;
@@ -62,34 +113,58 @@
     }
   }
 
-  @media screen and (max-width: 1250px) {
-    .slider {
-      height: 40vw;
-      width: 70vw;
-      margin-left: 15rem;
-        .jeanfarine {
-        transform: translate(-11rem, 100px);
+  @keyframes kenBurns {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.07);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .slider .slide {
+      transform: none;
+      transition: opacity 0.2s ease-in-out;
+
+      &.active {
+        animation: none;
       }
     }
   }
 
   @media screen and (max-width: 1000px) {
     .slider {
-      height: 50vw;
+      --debord: 0px;
+
       width: 95vw;
       margin: auto;
+
+      .pastilles button {
+        flex-basis: 40px;
+        height: 32px;
+        padding: 15px 4px;
+      }
+
+      // Sous 1000px la légende ne peut plus chevaucher la photo sans la masquer :
+      // elle repasse dans le flux, sous le carrousel.
       .jeanfarine {
-        display: none;
+        position: static;
+        width: auto;
+        margin-top: 0.5rem;
+        border-left: 10px solid #fedd58;
+        border-radius: 8px;
       }
     }
   }
 
-  .qui-sommes-nous-message {
-    position: relative;
+  // Sans encadré ni croix de fermeture : un filet doré à gauche, comme un
+  // exergue, plutôt qu'un bandeau qu'on invite à faire disparaître.
+  .qui-sommes-nous {
     width: 70%;
     margin: 2rem auto;
+    padding: 1.5rem;
     background-color: #261200b7;
-    border: 1px solid #fedd58;
     border-left: 10px solid #fedd58;
     border-radius: 8px;
     animation: slideInFromTop 0.5s ease-out;
@@ -98,43 +173,11 @@
       font-weight: 700;
       color: #fedd58;
     }
-  }
 
-  .message-content {
-    padding: 1.5rem 3rem 1.5rem 1.5rem;
     p {
       color: beige;
       line-height: 1.6;
       font-size: 16px;
-    }
-  }
-
-  .close-btn {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: none;
-    border: none;
-    color: #fedd58;
-    font-size: 1.5rem;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-    line-height: 1;
-
-    &:hover {
-      background-color: rgba(254, 221, 88, 0.1);
-      color: beige;
-      transform: scale(1.1);
-    }
-
-    &:active {
-      transform: scale(0.95);
     }
   }
 
@@ -150,13 +193,15 @@
   }
 
   @media screen and (max-width: 1000px) {
-    .qui-sommes-nous-message {
-      display: none !important;
+    .qui-sommes-nous {
+      width: 95vw;
+      margin: 1.5rem auto;
+      padding: 1.25rem;
     }
   }
 
   @media screen and (max-width: 1250px) and (min-width: 1001px) {
-    .qui-sommes-nous-message {
+    .qui-sommes-nous {
       width: 85%;
     }
   }
@@ -239,11 +284,39 @@
             font-weight: 700;
             color: #fedd58;
           }
+
+          ul {
+            // Le reset global supprime le padding : sans lui les puces
+            // sortiraient du panneau.
+            margin-top: 0.4rem;
+            padding-left: 1.2rem;
+
+            li {
+              margin-bottom: 0.4rem;
+              line-height: 1.5;
+
+              &::marker {
+                color: #fedd58;
+              }
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
         }
 
         .resume {
           margin-top: 1rem;
           font-style: italic;
+
+          p {
+            margin-bottom: 0.5rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
         }
 
         .button {
