@@ -76,53 +76,56 @@ function Home() {
           <div className="box two-columns">
             <div className="photo">
               <img
-                src="affiche-tous-mes-reves-partent-de-gare-austerlitz.png"
-                alt="Affiche : Tous mes rêves partent de gare d’Austerlitz, pièce de Mohamed Kacimi, Cie Les Jean Farine à Lentilly les 16 et 23 avril 2026."
+                src="affiche-festival-theatre-amateur-2026.jpg"
+                alt="Affiche : 9e Festival de théâtre amateur 2026, présenté par La Treille et Les Jean Farine, salle de spectacle L’Écrin à Saint Germain Nuelles les 27, 28 et 29 novembre 2026."
               />
             </div>
             <div className="infos">
-              <h3>En ce moment : Tous mes rêves partent de gare d’Austerlitz</h3>
-                            <div className="auteurs">
+              <h3>Prochainement : 9e Festival de théâtre amateur</h3>
+              <div className="auteurs">
                 <p>
-                  Une pièce de : <span className="nom">Mohamed Kacimi</span>
-                </p>
-                <p>
-                  Mise en scène : <span className="nom">Catherine Albaladejo</span>
+                  Présenté par : <span className="nom">La Treille</span> et{" "}
+                  <span className="nom">Les Jean Farine</span>
                 </p>
               </div>
 
               <div className="dates">
-                <p>Jeudis 16 avril et 23 avril 2026 à 20h</p>
+                <p>Vendredi 27, samedi 28 et dimanche 29 novembre 2026</p>
               </div>
 
               <div className="lieu">
-                <p className="nom">Espace culturel La Passerelle</p>
-                <p>15 rue Chatelard Dru</p>
-                <p>LENTILLY</p>
+                <p className="nom">Salle de spectacle L’Écrin</p>
+                <p>Esplanade des Anciens Combattants</p>
+                <p>Bourg de Nuelles — 69210 SAINT GERMAIN NUELLES</p>
               </div>
 
               <div className="duree-tarif">
-                <p>Durée : <span className="nom">90 min</span></p>
-                <p>À partir de 14 ans</p>
                 <p>
-                  Tarif : <span className="nom">5 €</span> sur HelloAsso,{" "}
-                  <span className="nom">8 €</span> sur place
+                  Tarif : <span className="nom">10 €</span> le billet à l’unité
+                </p>
+                <p>
+                  <span className="nom">8 €</span> pour les adhérents de La Treille et des Jean
+                  Farine, les moins de 18 ans et les étudiants
+                </p>
+                <p>
+                  <span className="nom">40 €</span> le pass festival (non nominatif)
                 </p>
               </div>
 
               <p className="resume">
-                « Tranches de vie de femmes en prison mais où l’humour reste de mise. » Dans la
-                bibliothèque d’une prison, des femmes se retrouvent pour partager un repas de Noël.
-                Entre éclats de rire, confidences et tensions, elles s’inventent un moment d’évasion.
+                Six spectacles en trois jours dans la toute nouvelle salle de l’Écrin. Les Jean
+                Farine y jouent « Tous mes rêves partent de gare d’Austerlitz » le samedi 28
+                novembre à 17h. Mâchon offert après les spectacles du samedi et du dimanche matin,
+                et Le Troquet du Festival ouvert toute la journée.
               </p>
 
               <div className="button">
                 <a
-                  href="https://www.helloasso.com/associations/les-jean-farine/evenements/tous-mes-reves-partent-de-gare-d-austerlitz-2"
+                  href="https://www.helloasso.com/associations/la-treille/evenements/festival-de-theatre-amateur-2026"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="button-reservation"
-                  aria-label="Ouvrir la billetterie dans un nouvel onglet"
+                  aria-label="Ouvrir la billetterie du festival dans un nouvel onglet"
                 >
                   Réservez vos places
                 </a>
