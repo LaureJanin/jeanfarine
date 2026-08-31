@@ -1,220 +1,216 @@
+$jaune: #fedd58;
+$beige: beige;
+$bande: 1150px;
+
 #dramas {
-   .grid {
-        width: 95%;
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-   }
-   .fond {
+    .chapeau {
+        max-width: 34rem;
+        margin: 0 auto 3rem;
+        padding: 0 1rem;
+        font-size: 0.95rem;
+        font-style: italic;
+        line-height: 1.6;
+        color: rgba(245, 245, 220, 0.6);
+    }
+
+    .grid {
+        max-width: $bande;
+        margin: 0 auto;
+        padding: 0 clamp(1rem, 4vw, 2rem) 4rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1.5rem;
+    }
+
+    // Une vraie fiche modale : avant, l'image de fond faisait seule office de
+    // voile et elle était masquée sous 1250px, si bien que le header restait
+    // visible et que la grille défilait derrière le panneau.
+    .fond {
         position: fixed;
-        top:0;
-        bottom:-100%;
+        inset: 0;
         z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(1rem, 4vw, 2.5rem);
+        background: rgba(8, 6, 6, 0.9);
+        backdrop-filter: blur(6px);
+        animation: ficheApparait 0.3s ease-out;
+
         &:focus {
             outline: none;
         }
+
+        .imgFond {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.18;
+            pointer-events: none;
+        }
+
         .box {
             position: relative;
-            top: 0;
-            left: 0;
-            button {
-                position: absolute;
-                top: 30px;
-                right: 30px;
-                cursor: pointer;
-                background: transparent;
-                border: transparent;
-                // Le délai d'une seconde rendait la fermeture impossible
-                // pendant l'ouverture.
-                opacity:0;
-                animation-name: reveal;
-                animation-duration: 0.4s;
-                animation-timing-function: ease-out;
-                animation-fill-mode: forwards;
-                img {
-                    width: 30px;
-                }
-                &:focus-visible {
-                    outline: 2px solid #fedd58;
-                    outline-offset: 3px;
-                }
-            }
-            @keyframes reveal {
-                0% {
-                    opacity:0;
-                }
-                100% {
-                    opacity:1;
-                }
-            }
-            .imgFond {
-                width: 100vw;
-                height: 100vh;
-                // Sans cover l'image est étirée au format de la fenêtre.
-                object-fit: cover;
-                animation-name: dramasSlideInFromLeft;
-                animation-duration: 1s;
-                animation-timing-function: ease-out;
+            width: 100%;
+            max-width: 44rem;
+            max-height: 100%;
+            overflow-y: auto;
+            padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 5vw, 3rem);
+            text-align: left;
+            color: $beige;
+            background: rgba(20, 14, 10, 0.92);
+            border: 1px solid rgba(254, 221, 88, 0.35);
+            border-radius: 4px;
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.7);
+            animation: ficheMonte 0.4s ease-out;
+        }
+
+        .fermer {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            font-family: inherit;
+            font-size: 1.6rem;
+            line-height: 1;
+            color: $beige;
+            background: rgba(54, 44, 44, 0.5);
+            border: 1px solid rgba(245, 245, 220, 0.2);
+            cursor: pointer;
+            transition: color 0.2s ease, background-color 0.2s ease;
+
+            &:hover {
+                color: $jaune;
+                background: rgba(54, 44, 44, 0.9);
             }
 
-            @keyframes dramasSlideInFromLeft {
-                0% {
-                    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-                }
-                100% {
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-                }
+            &:focus-visible {
+                outline: 2px solid $jaune;
+                outline-offset: 3px;
+            }
+        }
+
+        .annee {
+            font-size: 0.8rem;
+            letter-spacing: 0.14em;
+            color: rgba(254, 221, 88, 0.85);
+        }
+
+        h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-style: italic;
+            font-weight: normal;
+            font-size: clamp(1.5rem, 4vw, 2.1rem);
+            line-height: 1.2;
+            color: $jaune;
+            margin: 0.35rem 0;
+            padding-right: 2.5rem;
+        }
+
+        .auteur {
+            font-size: 0.9rem;
+            color: rgba(245, 245, 220, 0.6);
+        }
+
+        .generique {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 2.5rem;
+            margin: 1.75rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(245, 245, 220, 0.15);
+            border-bottom: 1px solid rgba(245, 245, 220, 0.15);
+
+            dt {
+                font-size: 0.7rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: rgba(245, 245, 220, 0.45);
             }
 
-            .content {
-                background-image: url(../../assets/images/parchemin.jpg);
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 1;
-                width: 85%;
-                height: fit-content;
-                border-radius: 5px;
-                animation-name: dramasSlideInFromBottom; 
-                animation-duration: 1s; 
-                animation-timing-function: ease-out; 
-                animation-fill-mode: forwards; 
-                @keyframes dramasSlideInFromBottom {
-                    from {
-                    transform: translateY(100%) translateX(-50%); 
-                    }
-                    to {
-                    transform: translateY(-50%) translateX(-50%);
-                    }
-                }
-                button {
-                    display:none;
-                }
-                h2 {
-                    color:rgb(63, 60, 60);
-                    font-size: 2rem;
-                    padding-top: 2rem;
-                }
-                .lien-galerie {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    margin: 0.5rem auto;
-                    color: rgb(63, 60, 60);
-                    font-weight: 700;
-                    text-decoration: underline;
-
-                    .lottie {
-                        display: block;
-                        width: 34px;
-                        height: 34px;
-                    }
-
-                    &:focus-visible {
-                        outline: 2px solid rgb(63, 60, 60);
-                        outline-offset: 3px;
-                    }
-                }
-                h3 {
-                    font-size: 22px;
-                    color:rgb(63, 60, 60);
-                    padding: 1rem;
-                    text-align: start;
-                    
-                }
-                p {
-                    font-size: 18px;
-                    color: rgb(63, 60, 60);
-                    text-align: start;
-                    padding: 1rem;
-                }
+            dd {
+                margin: 0.2rem 0 0;
+                font-size: 0.95rem;
             }
+        }
+
+        .lien-galerie {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: $jaune;
+            border: 1px solid rgba(254, 221, 88, 0.5);
+            border-radius: 2rem;
+            transition: color 0.25s ease, background-color 0.25s ease;
+
+            &:hover {
+                color: #241d1d;
+                background: $jaune;
+            }
+
+            &:focus-visible {
+                outline: 2px solid $jaune;
+                outline-offset: 3px;
+            }
+        }
+
+        // Mesure limitée : le panneau occupait 85% de la fenêtre, soit plus de
+        // 130 caractères par ligne là où l'œil est à l'aise autour de 70.
+        .resume {
+            max-width: 60ch;
+            margin-top: 2rem;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(245, 245, 220, 0.85);
         }
     }
-    .closing {
-        .box {
-            animation-name: goToTheBottom;
-            animation-duration: 0.8s;
-            animation-timing-function: ease-out;
-            animation-fill-mode: forwards; 
-        }
-        @keyframes goToTheBottom {
-            0% {
-            transform: translateY(0);
-            }
 
-            100% {
-            transform: translateY(100%);
-            }
-        }
+    .closing .box,
+    .closing .imgFond {
+        animation: ficheDisparait 0.3s ease-out forwards;
     }
 }
 
-@media screen and (max-width: 1250px) {
-    #dramas {
-        .fond {
-            overflow-y:auto;
-            .box {
-                button {
-                    display: none;
-                }
-                .imgFond {
-                    display: none;
-                }
-                .content {
-                    width: 95%;
-                    height: auto;
-                    
-                    button {
-                        display: block;
-                        position: absolute;
-                        top: 10px;
-                        right:10px;
-                        cursor: pointer;
-                        background: transparent;
-                        border: transparent;
-                        opacity:0;
-                        animation-name: reveal;
-                        animation-duration: 0.4s;
-                        animation-timing-function: ease-out;
-                        animation-fill-mode: forwards;
-                        img {
-                            width: 25px;
-                        }
-                        &:focus-visible {
-                            outline: 2px solid rgb(63, 60, 60);
-                            outline-offset: 3px;
-                        }
-                    }
-                    h2 {
-                        font-size: 1.2rem;
-                    }
-                    h3 {
-                        font-size: 15px;
-                        padding: 1rem;
-                        text-align: start;
-                    }
-                    p {
-                        font-size: 13px;
-                        padding: 1rem;
-                        text-align: start;
-                    }
-                }
-                @media screen and (max-width: 700px) {
-                    .content {
-                        top:105vw;
-                    }
-                }
-            }
-        }
-        .closing {
-            .box {
-                animation:none;
-            }
-        }
+@keyframes ficheApparait {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes ficheMonte {
+    from {
+        opacity: 0;
+        transform: translateY(1.5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ficheDisparait {
+    to {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #dramas .fond,
+    #dramas .fond .box,
+    #dramas .closing .box,
+    #dramas .closing .imgFond {
+        animation: none;
     }
 }

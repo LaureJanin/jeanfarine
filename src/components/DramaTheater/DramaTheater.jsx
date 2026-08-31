@@ -9,7 +9,7 @@ function DramaTheater({ drama, onClick, rang }) {
         style={{ animationDelay: `calc(var(--cadence) * ${Math.min(rang, 8)})` }}
       >
         {/* Vignette carrée de 600px : la photo d'origine fait jusqu'à 2200px de
-            large pour un affichage dans 400px. alt vide, le titre juste à côté
+            large pour un affichage dans 400px. alt vide, la légende juste à côté
             nomme déjà la carte. */}
         <img
           src={drama.thumbnail ?? drama.image}
@@ -17,7 +17,11 @@ function DramaTheater({ drama, onClick, rang }) {
           loading="lazy"
           decoding="async"
         />
-        <span className="titre">{drama.title}</span>
+        <span className="legende">
+          <span className="annee">{drama.year}</span>
+          <span className="titre">{drama.title}</span>
+          <span className="auteur">{drama.author}</span>
+        </span>
       </button>
     );
 }
