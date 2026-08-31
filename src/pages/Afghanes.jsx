@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import "./styles/afghanes.scss";
-import affiche from "../../public/affiche-soutien-femmes-afghanes.jpg";
-import logo from "../../public/affiche-soutien-femmes-afghanes_logo.png";
 
 function Afghanes() {
   useEffect(() => {
@@ -13,7 +11,7 @@ function Afghanes() {
       <div className="wrapper">
         <div className="container">
           <header className="header">
-            <img src={logo} alt="Logo" className="logo" />
+            <img src="/affiche-soutien-femmes-afghanes_logo.png" alt="Logo" className="logo" />
             <h1 className="main-title">Soutien aux filles et femmes Afghanes</h1>
           </header>
 
@@ -42,7 +40,7 @@ function Afghanes() {
           <div className="event-section">
             <h2>Événement du 9 novembre 2024</h2>
             <div className="event-content">
-              <img src={affiche} alt="Affiche de l'évènement Solidarité femmes afghanes" className="event-poster" />
+              <img src="/affiche-soutien-femmes-afghanes.jpg" alt="Affiche de l'évènement Solidarité femmes afghanes" className="event-poster" />
               <div className="event-details">
                 <p>
                   Rejoignez-nous pour une journée de solidarité et de soutien aux <em>filles et femmes afghanes</em>, avec des interventions, des expositions et des performances artistiques.

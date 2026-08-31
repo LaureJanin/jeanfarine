@@ -81,7 +81,7 @@ export default function LogoJF({
 
             {/* Mask image with reveal animation */}
             <image
-                href="/logo_JF.png"
+                href="/logo_JF.jpg"
                 x="100"
                 y="80"
                 width="600"

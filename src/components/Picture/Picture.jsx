@@ -56,7 +56,12 @@ function Picture() {
                 {dramas
                   .find((drama) => drama.title === selectedDrama)
                   .videos.map((video, index) => (
-                    <video key={index} controls>
+                    <video
+                      key={index}
+                      controls
+                      preload="none"
+                      poster={video.replace(/\.[^.]+$/, "-poster.jpg")}
+                    >
                       <source src={video} type={video.endsWith('.mp4') ? 'video/mp4' : 'video/quicktime'} />
                       Votre navigateur ne supporte pas la lecture de vidéos.
                     </video>
