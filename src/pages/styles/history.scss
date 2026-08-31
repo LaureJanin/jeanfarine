@@ -1,13 +1,26 @@
 #history {
 	.intro {
-		width: 70%;
-		margin:auto;
-		text-align: center;
+		// Texte long : mesure limitée et aligné à gauche, l'œil retrouve
+		// difficilement le début de chaque ligne sur un texte centré.
+		max-width: 68ch;
+		margin: 0 auto 3rem;
+		padding: 0 1rem;
+		text-align: left;
 		opacity: 0; 
 		animation-name: historySlideFromBottom; 
 		animation-duration: 1.5s; 
 		animation-timing-function: ease-out; 
 		animation-fill-mode: forwards;  
+
+		p {
+			margin-bottom: 1rem;
+			line-height: 1.6;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
 		#italic {
 			font-family:'Times New Roman', Times, serif;
 			font-style: italic;
@@ -21,24 +34,8 @@
 		}
 		to {
 		opacity: 1; 
-		transform: translateY(0), scale(1.1);
+		transform: translateY(0);
 		}
-	}
-
-	@media screen and (max-width: 1000px) {
-		.intro {
-			width: 95%;
-		}
-	}
-
-	.hidden {
-		opacity: 0;
-		transform: translate3d(0, -100px, 0) rotateX(90deg);
-	}
-
-	.show {
-		opacity: 1;
-		transform: translate3d(0, 0px, 0);
 	}
 
 	.timeline {
@@ -59,7 +56,22 @@
 		padding: 10px 40px;
 		position: relative;
 		width: 50%;
-		transition: height 500ms, transform 500ms, opacity 1s;
+		// Même durée pour les deux propriétés : la carte finissait de se
+		// déplacer alors qu'elle était encore à moitié transparente.
+		transition: transform 600ms ease-out, opacity 600ms ease-out;
+
+		// État de départ, retiré par l'IntersectionObserver. Les cartes émergent
+		// du ruban central : décalées vers l'extérieur, elles débordaient de la
+		// page en deux colonnes étroites.
+		&.hidden {
+			opacity: 0;
+		}
+		&.hidden.left {
+			transform: translate3d(2rem, 1rem, 0);
+		}
+		&.hidden.right {
+			transform: translate3d(-2rem, 1rem, 0);
+		}
 
 		.content {
 			padding: 1rem;
@@ -74,8 +86,14 @@
 				margin-bottom: 16px;
 			}
 			.photo {
-				max-width: 100%;
-				height: auto;
+				// Place réservée avant le chargement : sans ratio, les cartes
+				// s'empilent à vide, la page paraît courte et le navigateur
+				// considère les dix images comme proches de l'écran, ce qui
+				// annule le loading="lazy".
+				display: block;
+				width: 100%;
+				aspect-ratio: 3 / 2;
+				object-fit: cover;
 			}
 		}
 	}
@@ -126,7 +144,20 @@
 	}
 
 
-	@media screen and (max-width: 600px) {
+	@media (prefers-reduced-motion: reduce) {
+		.intro,
+		.container {
+			animation: none;
+			transition: none;
+		}
+	}
+
+	@media screen and (max-width: 900px) {
+		.timeline {
+			// Une seule colonne : à deux colonnes les titres se coupaient et la
+			// moitié de la hauteur restait vide.
+			max-width: 700px;
+		}
 		.timeline::after {
 			left: 31px;
 		}
@@ -134,12 +165,21 @@
 			width: 100%;
 			padding-left: 70px;
 			padding-right: 25px;
+
+			// Colonne unique : plus de côté, toutes les cartes montent.
+			&.hidden.left,
+			&.hidden.right {
+				transform: translate3d(0, 1.5rem, 0);
+			}
 		}
 		.container::before {
+			// right vient de .left::before, sans quoi la flèche est
+			// sur-contrainte et se place au mauvais endroit.
 			left: 60px;
-			border: medium solid var(--white);
+			right: auto;
+			border: medium solid #fedd58;
 			border-width: 10px 10px 10px 0;
-			border-color: transparent var(--white) transparent transparent;
+			border-color: transparent #fedd58 transparent transparent;
 		}
 		.left::after,
 		.right::after {
