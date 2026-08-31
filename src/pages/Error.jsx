@@ -5,7 +5,7 @@ import "./styles/error.scss";
 export default function Error() {
     return (
       <section id="notFound">
-        <h1>OUPS... TU T'ES PERDU(E)</h1>
+        <h1>Oups… tu t’es perdu(e)</h1>
         <div className="notFoundContainer">
             <Lottie
                 loop

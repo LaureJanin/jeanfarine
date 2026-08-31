@@ -58,7 +58,7 @@
 		width: 50%;
 		// Même durée pour les deux propriétés : la carte finissait de se
 		// déplacer alors qu'elle était encore à moitié transparente.
-		transition: transform 600ms ease-out, opacity 600ms ease-out;
+		transition: transform var(--apparition) ease-out, opacity var(--apparition) ease-out;
 
 		// État de départ, retiré par l'IntersectionObserver. Les cartes émergent
 		// du ruban central : décalées vers l'extérieur, elles débordaient de la

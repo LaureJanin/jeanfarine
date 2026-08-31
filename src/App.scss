@@ -27,6 +27,25 @@
 	box-sizing: border-box;
 }
 
+:root {
+  // Décalage entre deux éléments d'une même série qui entrent en cascade, et
+  // durée de leur apparition. Partagé par Histoire, Réalisations, Galerie et
+  // Presse pour que les quatre pages aient le même rythme.
+  --cadence: 70ms;
+  --apparition: 500ms;
+}
+
+@keyframes entreeEnCascade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 #root {
   margin: 0 auto;
   text-align: center;
@@ -38,7 +57,7 @@
     font-size: 38px;
     font-style: italic;
     letter-spacing: 1px;
-    text-transform: capitalize;
+    text-transform: none;
     padding-bottom: 1rem;
     animation-name: border-anim;
     animation-duration: 2s;

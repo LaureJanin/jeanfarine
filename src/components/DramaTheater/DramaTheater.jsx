@@ -6,7 +6,7 @@ function DramaTheater({ drama, onClick, rang }) {
         type="button"
         className="drama-card"
         onClick={onClick}
-        style={{ animationDelay: `${rang * 90}ms` }}
+        style={{ animationDelay: `calc(var(--cadence) * ${Math.min(rang, 8)})` }}
       >
         {/* Vignette carrée de 600px : la photo d'origine fait jusqu'à 2200px de
             large pour un affichage dans 400px. alt vide, le titre juste à côté

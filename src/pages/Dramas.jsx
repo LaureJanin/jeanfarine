@@ -54,7 +54,7 @@ function Dramas() {
 
   return (
     <section id="dramas">
-      <h1>NOS RÉALISATIONS</h1>
+      <h1>Nos réalisations</h1>
       <div className="grid">
         {dramas.map((drama, index) => (
           <DramaTheater

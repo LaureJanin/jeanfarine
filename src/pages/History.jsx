@@ -17,7 +17,7 @@ function History() {
 					.filter((entry) => entry.isIntersecting)
 					.forEach((entry, rang) => {
 						// Léger décalage entre les cartes qui arrivent ensemble.
-						entry.target.style.transitionDelay = `${rang * 120}ms`;
+						entry.target.style.transitionDelay = `calc(var(--cadence) * ${Math.min(rang, 8)})`;
 						entry.target.classList.remove("hidden");
 						// On cesse d'observer : sinon la carte repartait de zéro dès
 						// qu'elle quittait l'écran et rejouait son animation à chaque
@@ -35,7 +35,7 @@ function History() {
 
     return (
         <section id="history">
-            <h1>HISTOIRE</h1>
+            <h1>Notre histoire</h1>
 			<div className="intro">
 				<p>
 					En 1997, un groupe de parents d'élèves de l'école de Saint Germain Nuelles se
