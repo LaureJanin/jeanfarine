@@ -1,15 +1,17 @@
 
 export default function LogoJF({
-                                   width = 220,
-                                   height = 220,
+                                   width = 80,
+                                   height = 80,
                                    className = "",
                                    title = "Jean Farine",
                                }) {
+    // viewBox cadré sur le cercle (cx 400, cy 380, r 290 + le trait) : sans ça, le SVG
+    // porte environ 27 % de vide transparent qui gonfle la hauteur du header.
     return (
         <svg
             className={`logo-jf ${className}`}
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 800 800"
+            viewBox="108 88 584 584"
             width={width}
             height={height}
             role="img"

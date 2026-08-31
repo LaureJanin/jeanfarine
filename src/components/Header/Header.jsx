@@ -14,9 +14,8 @@ function Header() {
   return (
     <section id="header">
       <div className="header">
-        <Link to="/">
-          <LogoJF className="logo-desktop" width={220} />
-          <span className="logo-mobile" aria-label="Accueil"></span>
+        <Link to="/" aria-label="Accueil">
+          <LogoJF />
         </Link>
         <button type="button" className="burger" onClick={handleShowLinks}>
           <span
@@ -27,8 +26,8 @@ function Header() {
         </button>
       </div>
 
-      <nav className={`${showLinks ? "heightNav " : ""}`}>
-        <ul className={`${showLinks ? "show-nav " : ""}`}>
+      <nav className={showLinks ? "heightNav" : ""}>
+        <ul>
           <li>
             <Link data-item="Histoire" to="/history" onClick={handleShowLinks}>
               Histoire
