@@ -321,8 +321,37 @@
 
         .button {
           display: flex;
+          flex-wrap: wrap;
           justify-content: center;
           align-items: center;
+          gap: 0.5rem;
+
+          .button-depliant {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(254, 221, 88, 0.55);
+            border-radius: 4px;
+            color: #fedd58;
+            text-decoration: none;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+
+            .poids {
+              font-size: 0.75rem;
+              opacity: 0.7;
+            }
+
+            &:hover {
+              border-color: #fedd58;
+              background-color: rgba(254, 221, 88, 0.12);
+            }
+
+            &:focus-visible {
+              outline: 2px solid #fedd58;
+              outline-offset: 2px;
+            }
+          }
 
           .button-reservation {
             display: inline-block;
@@ -340,6 +369,16 @@
               background-color: #e6c84a;
               cursor: pointer;
             }
+          }
+        }
+
+        .renseignements a {
+          color: #fedd58;
+          text-decoration: none;
+          border-bottom: 1px solid rgba(254, 221, 88, 0.4);
+
+          &:hover {
+            border-bottom-color: #fedd58;
           }
         }
       }

@@ -64,7 +64,7 @@ function Home() {
 
   return (
       <section id="home">
-        <h1>BIENVENUE SUR LE SITE DES JEAN FARINE</h1>
+        <h1>Bienvenue sur le site des Jean Farine</h1>
         <div
           className="slider"
           role="region"
@@ -191,9 +191,22 @@ function Home() {
                 >
                   Réservez vos places
                 </a>
+
+                <a
+                  href="/depliant-festival-theatre-amateur-2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button-depliant"
+                  aria-label="Ouvrir le dépliant du festival au format PDF dans un nouvel onglet"
+                >
+                  Le dépliant complet <span className="poids">PDF, 3,4 Mo</span>
+                </a>
               </div>
 
-              <p>Renseignements : jeanfarine.fr — 06 52 18 45 40</p>
+              <p className="renseignements">
+                Renseignements : <a href="mailto:jean.farine@free.fr">jean.farine@free.fr</a> —{" "}
+                <a href="tel:+33652184540">06 52 18 45 40</a>
+              </p>
             </div>
           </div>
         </div>
