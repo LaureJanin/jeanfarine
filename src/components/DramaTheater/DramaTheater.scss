@@ -1,53 +1,94 @@
-#dramaTheater {
-    cursor: pointer;
-    opacity: 0;
+.drama-card {
     position: relative;
-  
+    display: block;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    opacity: 0;
+    animation: dramaFadeIn 0.5s ease-in forwards;
+
     img {
+        display: block;
         width: 25rem;
         height: 25rem;
         object-fit: cover;
     }
-    .overlay {
+
+    .titre {
         position: absolute;
-        top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        right: 0;
+        color: #fedd58;
         font-size: 24px;
-        transition: opacity 0.5s ease;
+        transition: opacity 0.4s ease;
+    }
+
+    &:focus-visible {
+        outline: 2px solid #fedd58;
+        outline-offset: 3px;
     }
 }
 
-$dramaTheater-children: 14;
-@for $i from 1 through $dramaTheater-children {
-    #dramaTheater:nth-child(#{$i}) {
-        animation: fadeIn 0.5s ease-in #{0.3s + ($i - 1) * 0.3s} forwards;
+// Souris ou pavé tactile : le titre se dévoile au survol, et aussi au focus
+// clavier pour que la navigation au clavier donne la même information.
+@media (hover: hover) {
+    .drama-card .titre {
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.55);
+        opacity: 0;
+    }
+
+    .drama-card:hover .titre,
+    .drama-card:focus-visible .titre {
+        opacity: 1;
     }
 }
 
-@keyframes fadeIn {
+// Écran tactile : il n'y a pas de survol, le titre resterait invisible.
+@media (hover: none) {
+    .drama-card .titre {
+        bottom: 0;
+        padding: 2.5rem 0.75rem 0.75rem;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+        font-size: 1.1rem;
+        line-height: 1.3;
+    }
+}
+
+@keyframes dramaFadeIn {
     to {
       opacity: 1;
     }
 }
 
-#dramaTheater:hover .overlay {
-    opacity: 1;
-    color: #fedd58;
+@media (prefers-reduced-motion: reduce) {
+    .drama-card {
+        opacity: 1;
+        animation: none;
+    }
+
+    .drama-card .titre {
+        transition: none;
+    }
 }
 
 @media screen and (max-width: 1000px) {
-    #dramaTheater {
+    .drama-card {
+        // 22rem en dur débordait de l'écran sous 350px.
+        max-width: 100%;
+
         img {
             width: 22rem;
-            height: 22rem;
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 1;
             margin: auto;
         }
     }
