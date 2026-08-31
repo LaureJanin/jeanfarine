@@ -1,16 +1,18 @@
+$jaune: #fedd58;
+$beige: beige;
+
 #history {
+	color: $beige;
+
 	.intro {
 		// Texte long : mesure limitée et aligné à gauche, l'œil retrouve
 		// difficilement le début de chaque ligne sur un texte centré.
 		max-width: 68ch;
-		margin: 0 auto 3rem;
-		padding: 0 1rem;
+		margin: 0 auto 3.5rem;
+		padding: 0 clamp(1rem, 4vw, 2rem);
 		text-align: left;
-		opacity: 0; 
-		animation-name: historySlideFromBottom; 
-		animation-duration: 1.5s; 
-		animation-timing-function: ease-out; 
-		animation-fill-mode: forwards;  
+		opacity: 0;
+		animation: historyIntro 1.2s ease-out forwards;
 
 		p {
 			margin-bottom: 1rem;
@@ -21,172 +23,311 @@
 			}
 		}
 
-		#italic {
-			font-family:'Times New Roman', Times, serif;
+		.italique {
+			font-family: 'Times New Roman', Times, serif;
 			font-style: italic;
-			color: #fedd58;
-		}
-	}
-	@keyframes historySlideFromBottom {
-		from {
-		opacity: 0; 
-		transform: translateY(20px); 
-		}
-		to {
-		opacity: 1; 
-		transform: translateY(0);
+			color: $jaune;
 		}
 	}
 
-	.timeline {
-		position: relative;
-		max-width: 1000px;
-		margin: 2rem auto;
-	}
-	.timeline::after {
-		content: "";
-		position: absolute;
-		width: 3px;
-		background: #fedd58;
-		top: 0;
-		bottom: 0;
-		left: 50%;
-	}
-	.container {
-		padding: 10px 40px;
-		position: relative;
-		width: 50%;
-		// Même durée pour les deux propriétés : la carte finissait de se
-		// déplacer alors qu'elle était encore à moitié transparente.
-		transition: transform var(--apparition) ease-out, opacity var(--apparition) ease-out;
+	// Réglette des années : posée sur le filet jaune, elle montre d'un coup
+	// d'œil que la frise court de 1999 à 2025 et sert à y sauter directement.
+	.reglette {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.25rem 0.5rem;
+		max-width: 1150px;
+		margin: 0 auto;
+		padding: 0 clamp(1rem, 4vw, 2rem) 1rem;
+		border-bottom: 1px solid rgba(254, 221, 88, 0.3);
 
-		// État de départ, retiré par l'IntersectionObserver. Les cartes émergent
-		// du ruban central : décalées vers l'extérieur, elles débordaient de la
-		// page en deux colonnes étroites.
-		&.hidden {
-			opacity: 0;
-		}
-		&.hidden.left {
-			transform: translate3d(2rem, 1rem, 0);
-		}
-		&.hidden.right {
-			transform: translate3d(-2rem, 1rem, 0);
-		}
-
-		.content {
-			padding: 1rem;
-			border:1px solid #fedd58bd;
+		button {
 			position: relative;
-			border-radius: 8px;
-			background-color: #261200b8;
-			transition: transform 0.2s ease-in-out;
-			h2 {
-				font-weight: 700;
-				font-size: 22px;
-				margin-bottom: 16px;
+			font-family: inherit;
+			font-size: 0.8rem;
+			letter-spacing: 0.08em;
+			color: rgba(245, 245, 220, 0.5);
+			background: none;
+			border: none;
+			padding: 0.35rem 0.6rem;
+			cursor: pointer;
+			transition: color 0.25s ease;
+
+			&:hover {
+				color: $jaune;
 			}
-			.photo {
-				// Place réservée avant le chargement : sans ratio, les cartes
-				// s'empilent à vide, la page paraît courte et le navigateur
-				// considère les dix images comme proches de l'écran, ce qui
-				// annule le loading="lazy".
-				display: block;
-				width: 100%;
-				aspect-ratio: 3 / 2;
-				object-fit: cover;
+
+			// Le repère descend sur le filet : la réglette se lit comme un axe.
+			&::after {
+				content: "";
+				position: absolute;
+				left: 50%;
+				bottom: -1.35rem;
+				width: 9px;
+				height: 9px;
+				margin-left: -4.5px;
+				border-radius: 50%;
+				background: rgba(254, 221, 88, 0.35);
+				transition: background-color 0.25s ease, transform 0.25s ease;
+			}
+
+			&.active {
+				color: $jaune;
+
+				&::after {
+					background: $jaune;
+					transform: scale(1.35);
+				}
+			}
+
+			&:focus-visible {
+				outline: 2px solid $jaune;
+				outline-offset: 2px;
 			}
 		}
 	}
-	.container::after {
-		content: "";
-		position: absolute;
-		width: 20px;
-		height: 20px;
-		right: -13px;
-		background-color: #fedd58;
-		border: solid 2px #fedd58;
-		top: 15px;
-		border-radius: 50%;
-		z-index: 1;
-	}
-	.left {
-		left: 0%;
-	}
-	.right {
-		left: 50%;
-	}
-	.left::before {
-		content: " ";
-		height: 0;
-		position: absolute;
-		top: 22px;
-		width: 0;
-		z-index: 1;
-		right: 30px;
-		border: medium solid #fedd58;
-		border-width: 10px 0 10px 10px;
-		border-color: transparent transparent transparent #fedd58;
-	}
-	.right::before {
-		content: " ";
-		height: 0;
-		position: absolute;
-		top: 22px;
-		width: 0;
-		z-index: 1;
-		left: 30px;
-		border: medium solid #fedd58;
-		border-width: 10px 10px 10px 0;
-		border-color: transparent #fedd58 transparent transparent;
-	}
-	.right::after {
-		left: -12px;
+
+	.piste {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		max-width: 1150px;
+		margin: 2.5rem auto 4rem;
+		padding: 0 clamp(0.5rem, 2vw, 1rem);
 	}
 
+	// Bords estompés : la carte suivante s'efface au lieu d'être coupée net, ce
+	// qui donne à voir qu'il reste de la frise à parcourir.
+	.rail {
+		display: flex;
+		gap: 1.5rem;
+		flex: 1;
+		min-width: 0;
+		list-style: none;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		// La carte accrochée démarre après le dégradé, sinon son bord gauche
+		// reste à moitié effacé.
+		scroll-padding-inline-start: 2.5rem;
+		padding: 0.5rem 1rem 1.5rem;
+		scrollbar-width: none;
+		-webkit-mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+		mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
 
-	@media (prefers-reduced-motion: reduce) {
-		.intro,
-		.container {
-			animation: none;
-			transition: none;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		// Sans cette réserve, le rail butte sur sa fin avant que les dernières
+		// cartes aient atteint le bord gauche : 2023 et 2025 étaient alors
+		// inatteignables, l'accrochage obligatoire rabattant la vue sur une carte
+		// antérieure. Le pseudo-élément est un élément flex, pas un enfant, donc
+		// la numérotation des cartes reste intacte.
+		&::after {
+			content: "";
+			flex: 0 0 calc(100% - clamp(260px, 30vw, 380px) - 2.5rem);
 		}
 	}
 
-	@media screen and (max-width: 900px) {
-		.timeline {
-			// Une seule colonne : à deux colonnes les titres se coupaient et la
-			// moitié de la hauteur restait vide.
-			max-width: 700px;
+	.carte {
+		flex: 0 0 clamp(260px, 30vw, 380px);
+		scroll-snap-align: start;
+		display: flex;
+		flex-direction: column;
+		border: 1px solid rgba(254, 221, 88, 0.35);
+		border-radius: 4px;
+		background: rgba(20, 14, 10, 0.85);
+		overflow: hidden;
+		opacity: 0;
+		animation: entreeEnCascade var(--apparition) ease-out forwards;
+		transition: border-color 0.3s ease;
+
+		&:hover {
+			border-color: rgba(254, 221, 88, 0.7);
 		}
-		.timeline::after {
-			left: 31px;
-		}
-		.container {
+
+		img {
+			display: block;
 			width: 100%;
-			padding-left: 70px;
-			padding-right: 25px;
+			// Place réservée avant le chargement, sans quoi les cartes s'empilent
+			// à vide et le navigateur croit les dix images proches de l'écran, ce
+			// qui annule le loading="lazy".
+			aspect-ratio: 3 / 2;
+			object-fit: cover;
+			filter: brightness(0.85);
+			transition: filter 0.4s ease;
+		}
 
-			// Colonne unique : plus de côté, toutes les cartes montent.
-			&.hidden.left,
-			&.hidden.right {
-				transform: translate3d(0, 1.5rem, 0);
+		&:hover img {
+			filter: brightness(1);
+		}
+
+		.texte {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.4rem;
+			padding: 1.25rem;
+			text-align: left;
+		}
+
+		h2 {
+			display: flex;
+			flex-direction: column;
+			gap: 0.2rem;
+			margin: 0 0 0.5rem;
+			font-size: inherit;
+			font-weight: normal;
+		}
+
+		.annee {
+			font-size: 0.75rem;
+			letter-spacing: 0.12em;
+			color: rgba(254, 221, 88, 0.85);
+		}
+
+		.titre {
+			font-family: Georgia, "Times New Roman", serif;
+			font-size: 1.15rem;
+			line-height: 1.25;
+			color: $beige;
+		}
+
+		p {
+			margin: 0;
+			font-size: 0.9rem;
+			color: rgba(245, 245, 220, 0.8);
+
+			span {
+				font-size: 0.7rem;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: rgba(245, 245, 220, 0.45);
 			}
 		}
-		.container::before {
-			// right vient de .left::before, sans quoi la flèche est
-			// sur-contrainte et se place au mauvais endroit.
-			left: 60px;
-			right: auto;
-			border: medium solid #fedd58;
-			border-width: 10px 10px 10px 0;
-			border-color: transparent #fedd58 transparent transparent;
+
+		a {
+			margin-top: 0.9rem;
+			padding: 0.45rem 1rem;
+			font-size: 0.75rem;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: $jaune;
+			border: 1px solid rgba(254, 221, 88, 0.5);
+			border-radius: 2rem;
+			transition: color 0.25s ease, background-color 0.25s ease;
+
+			&:hover {
+				color: #241d1d;
+				background: $jaune;
+			}
+
+			&:focus-visible {
+				outline: 2px solid $jaune;
+				outline-offset: 3px;
+			}
 		}
-		.left::after,
-		.right::after {
-			left: 21px;
+	}
+
+	// Le défilement horizontal ne se devine pas à la souris : les flèches sont
+	// la seule commande explicite pour parcourir la frise.
+	.fleche {
+		flex: 0 0 auto;
+		width: 2.5rem;
+		height: 4rem;
+		font-family: inherit;
+		font-size: 2rem;
+		line-height: 1;
+		color: $beige;
+		background: rgba(54, 44, 44, 0.5);
+		border: 1px solid rgba(245, 245, 220, 0.2);
+		border-radius: 3px;
+		cursor: pointer;
+		transition: color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+
+		&:hover:not(:disabled) {
+			color: $jaune;
+			background: rgba(54, 44, 44, 0.9);
 		}
-		.right {
-			left: 0%;
+
+		&:disabled {
+			opacity: 0.25;
+			cursor: default;
 		}
+
+		&:focus-visible {
+			outline: 2px solid $jaune;
+			outline-offset: 3px;
+		}
+	}
+
+	@media screen and (max-width: 700px) {
+		// Une carte par écran : le balayage du doigt est le geste naturel ici.
+		.carte {
+			flex: 0 0 min(78vw, 320px);
+		}
+
+		.rail::after {
+			flex-basis: calc(100% - min(78vw, 320px) - 2.5rem);
+		}
+
+		// Les flèches prennent de la largeur au rail pour rien quand le doigt
+		// fait déjà le travail.
+		.fleche {
+			display: none;
+		}
+
+		// Sur deux lignes, les pastilles de la première retombaient sur le texte
+		// de la seconde : l'année active se signale par son fond.
+		.reglette {
+			gap: 0.35rem;
+
+			button {
+				font-size: 0.75rem;
+				padding: 0.3rem 0.55rem;
+				border-radius: 2rem;
+
+				&::after {
+					display: none;
+				}
+
+				&.active {
+					background: rgba(254, 221, 88, 0.14);
+				}
+			}
+		}
+	}
+}
+
+@keyframes historyIntro {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#history .intro,
+	#history .carte {
+		opacity: 1;
+		animation: none;
+	}
+
+	#history .rail {
+		scroll-behavior: auto;
+	}
+
+	#history .carte,
+	#history .carte img,
+	#history .reglette button,
+	#history .reglette button::after,
+	#history .fleche {
+		transition: none;
 	}
 }
