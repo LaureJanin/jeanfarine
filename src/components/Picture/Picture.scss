@@ -1,177 +1,238 @@
+$jaune: #fedd58;
+$beige: beige;
+$bande: 1150px;
+
 #picture {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .menuDeroulant {
-        margin-bottom: 2rem;
-        position: relative;
-        z-index: 100;
-        
-        .mySelect {
-            position: relative;
-            width: 35rem;
-            height: 3rem;
-            border: none;
-            background-color: transparent;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            color: beige;
-            cursor: pointer;
-            list-style-type: none;
-            
-            .myOption {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 35rem;
-                text-align: center;
-                padding: 1rem;
-                height: 3rem;
-                line-height: 1rem;
-                color: beige;
-                font-size: 1.2rem;
-                border-radius: 0;
-                cursor: pointer;
-                background-color: rgba(54, 44, 44, 0.616);
-                opacity: 0;
-                transform: translateY(-10px);
-                transition: all 0.3s ease-in-out;
-                pointer-events: none;
-                z-index: 100;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                
-                &:first-child {
-                    position: relative;
-                    opacity: 1;
-                    transform: translateY(0);
-                    pointer-events: auto;
-                    z-index: 110;
-                }
-            }
-            
-            .myOption:hover {
-                color: #fedd58;
-            }
+    max-width: $bande;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem) 4rem;
+    color: $beige;
 
-            &.open {
-                .myOption {
-                    opacity: 1;
-                    transform: translateY(0);
-                    pointer-events: auto;
-                    background-color: rgba(54, 44, 44, 0.95);
-                }
-                
-                @for $i from 2 through 15 {
-                    .myOption:nth-child(#{$i}) {
-                        top: #{($i - 1) * 3}rem;
-                    }
-                }
-            }
-        }
-    }
-    @media (max-width: 768px) {
-        .menuDeroulant {
-            .mySelect {
-                .myOption {
-                    width: 95%;
-                    margin-left: auto;
-                    margin-right: auto; 
-                }
-            }
-        }
-    }
-
-    .no-selection {
-        margin: 4rem auto;
-        text-align: center;
-        
-        p {
-            color: beige;
-            font-size: 1.5rem;
-            font-style: italic;
-            opacity: 0.8;
-        }
-    }
-    .gallery {
+    .filtres {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        img {
-            opacity: 0;
-            width: 30%;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-        $img-children: 14;
-        @for $i from 1 through $img-children {
-            img:nth-child(#{$i}) {
-                animation: fadeIn 0.5s ease-in #{0.3s + ($i - 1) * 0.3s} forwards;
-            }
-        }
-        @keyframes fadeIn {
-            to {
-            opacity: 1;
-            }
-        }
-    }
-    @media (max-width: 768px) {
-        .gallery {
-            img {
-                width: 95%;
-            }
-        }
-    }
+        gap: 0.5rem;
+        margin: 1.5rem auto 3rem;
 
-    .videos-section {
-        width: 90%;
-        margin: 3rem auto;
-        
-        h2 {
-            color: #fedd58;
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
+        button {
+            font-family: inherit;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            letter-spacing: .08em;
-        }
+            color: rgba(245, 245, 220, 0.65);
+            background: rgba(54, 44, 44, 0.45);
+            border: 1px solid rgba(245, 245, 220, 0.18);
+            border-radius: 2rem;
+            padding: 0.5rem 1.1rem;
+            cursor: pointer;
+            transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
 
-        .videos-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
+            &:hover {
+                color: $jaune;
+                border-color: rgba(254, 221, 88, 0.5);
+            }
 
-            video {
-                width: 45%;
-                max-width: 600px;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                opacity: 0;
-                animation: fadeIn 1s ease-in-out forwards;
-                
-                &:nth-child(1) {
-                    animation-delay: 0.3s;
-                }
-                &:nth-child(2) {
-                    animation-delay: 0.6s;
-                }
-                &:nth-child(3) {
-                    animation-delay: 0.9s;
-                }
+            &.actif {
+                color: #241d1d;
+                background: $jaune;
+                border-color: $jaune;
+            }
+
+            &:focus-visible {
+                outline: 2px solid $jaune;
+                outline-offset: 3px;
             }
         }
+    }
 
-        @media (max-width: 768px) {
-            .videos-gallery {
-                video {
-                    width: 95%;
-                }
+    // Écran d'accueil : une pièce = une vignette, plutôt qu'une page vide.
+    .apercus {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1.5rem;
+
+        .apercu {
+            position: relative;
+            display: block;
+            padding: 0;
+            border: none;
+            background: none;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 4px;
+            opacity: 0;
+            animation: entreeEnCascade var(--apparition) ease-out forwards;
+
+            img {
+                display: block;
+                width: 100%;
+                aspect-ratio: 1;
+                object-fit: cover;
+                transition: transform 0.5s ease, filter 0.4s ease;
+                filter: brightness(0.75);
+            }
+
+            .legende {
+                position: absolute;
+                inset: auto 0 0 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+                padding: 2.5rem 1rem 0.9rem;
+                text-align: left;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+            }
+
+            .titre {
+                font-size: 1rem;
+                color: $beige;
+            }
+
+            .compte {
+                font-size: 0.75rem;
+                letter-spacing: 0.05em;
+                color: rgba(254, 221, 88, 0.8);
+            }
+
+            &:hover img,
+            &:focus-visible img {
+                transform: scale(1.06);
+                filter: brightness(1);
+            }
+
+            &:focus-visible {
+                outline: 2px solid $jaune;
+                outline-offset: 3px;
             }
         }
+    }
+
+    .piece-titre {
+        font-family: Georgia, "Times New Roman", serif;
+        font-style: italic;
+        font-weight: normal;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        color: $jaune;
+        margin-bottom: 2.5rem;
+    }
+
+    .videos-section,
+    .photos-section {
+        margin-bottom: 3.5rem;
+
+        h3 {
+            font-size: 0.9rem;
+            font-weight: normal;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(245, 245, 220, 0.55);
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .videos-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+
+        video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 4px;
+            background: #000;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+
+        .photo {
+            display: block;
+            padding: 0;
+            border: none;
+            background: none;
+            cursor: zoom-in;
+            overflow: hidden;
+            border-radius: 3px;
+            opacity: 0;
+            animation: entreeEnCascade var(--apparition) ease-out forwards;
+
+            img {
+                display: block;
+                width: 100%;
+                aspect-ratio: 3 / 2;
+                object-fit: cover;
+                transition: transform 0.5s ease, filter 0.4s ease;
+            }
+
+            &:hover img,
+            &:focus-visible img {
+                transform: scale(1.05);
+                filter: brightness(1.1);
+            }
+
+            &:focus-visible {
+                outline: 2px solid $jaune;
+                outline-offset: 3px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .gallery {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    // Empilés, les 11 filtres occupent huit lignes avant la première photo :
+    // sur mobile la barre défile horizontalement.
+    @media screen and (max-width: 700px) {
+        .filtres {
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            overflow-x: auto;
+            scroll-snap-type: x proximity;
+            scrollbar-width: none;
+            margin-inline: calc(clamp(1rem, 4vw, 2rem) * -1);
+            padding-inline: clamp(1rem, 4vw, 2rem);
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            button {
+                flex: 0 0 auto;
+                scroll-snap-align: start;
+                font-size: 0.75rem;
+                padding: 0.45rem 0.9rem;
+            }
+        }
+    }
+
+    @media screen and (max-width: 560px) {
+        .gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .apercus {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #picture .gallery .photo,
+    #picture .apercu {
+        opacity: 1;
+        animation: none;
+    }
+
+    #picture .apercu img,
+    #picture .gallery img {
+        transition: none;
     }
 }

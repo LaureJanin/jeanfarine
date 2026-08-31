@@ -1,0 +1,109 @@
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(8, 6, 6, 0.94);
+    backdrop-filter: blur(6px);
+    animation: lightboxApparait 0.25s ease-out;
+
+    img {
+        max-width: min(92vw, 1400px);
+        max-height: 82vh;
+        object-fit: contain;
+        cursor: default;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    button {
+        position: absolute;
+        font-family: inherit;
+        color: beige;
+        background: rgba(54, 44, 44, 0.5);
+        border: 1px solid rgba(245, 245, 220, 0.2);
+        cursor: pointer;
+        transition: color 0.2s ease, background-color 0.2s ease;
+
+        &:hover {
+            color: #fedd58;
+            background: rgba(54, 44, 44, 0.9);
+        }
+
+        &:focus-visible {
+            outline: 2px solid #fedd58;
+            outline-offset: 3px;
+        }
+    }
+
+    .fermer {
+        top: 1.25rem;
+        right: 1.25rem;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+        font-size: 1.6rem;
+        line-height: 1;
+    }
+
+    .precedente,
+    .suivante {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3rem;
+        height: 4.5rem;
+        border-radius: 3px;
+        font-size: 2.5rem;
+        line-height: 1;
+    }
+
+    .precedente {
+        left: 1.25rem;
+    }
+
+    .suivante {
+        right: 1.25rem;
+    }
+
+    .compteur {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 80vw;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        color: rgba(245, 245, 220, 0.7);
+    }
+
+    @media screen and (max-width: 560px) {
+        img {
+            max-height: 70vh;
+        }
+
+        .precedente,
+        .suivante {
+            top: auto;
+            bottom: 3.5rem;
+            transform: none;
+            width: 3.5rem;
+            height: 3rem;
+        }
+    }
+}
+
+@keyframes lightboxApparait {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lightbox {
+        animation: none;
+    }
+}
