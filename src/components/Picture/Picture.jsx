@@ -18,7 +18,10 @@ function Picture() {
 
   const titreChoisi = parametres.get("drama") ?? "";
   const piece = useMemo(() => dramas.find((d) => d.title === titreChoisi), [titreChoisi]);
-  const photos = piece?.pictures ?? [];
+  // Dédoublonné : la même photo listée deux fois donnait deux clés React
+  // identiques, et React laissait alors une vignette de la pièce précédente
+  // en tête de la nouvelle galerie.
+  const photos = useMemo(() => [...new Set(piece?.pictures ?? [])], [piece]);
   const videos = piece?.videos ?? [];
 
   // La barre de filtres défile horizontalement sur mobile : sans ça, arriver
