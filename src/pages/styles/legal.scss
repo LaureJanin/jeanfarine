@@ -1,0 +1,113 @@
+$jaune: #fedd58;
+$beige: beige;
+
+#legal {
+	color: $beige;
+
+	.corps {
+		// Mesure limitée et texte à gauche, comme l'intro d'Histoire : un texte
+		// juridique se lit mal centré.
+		max-width: 68ch;
+		margin: 0 auto 4rem;
+		padding: 0 clamp(1rem, 4vw, 2rem);
+		text-align: left;
+	}
+
+	article {
+		margin-bottom: 2.5rem;
+		opacity: 0;
+		animation: entreeEnCascade var(--apparition) ease-out forwards;
+
+		&:nth-child(2) { animation-delay: calc(var(--cadence) * 1); }
+		&:nth-child(3) { animation-delay: calc(var(--cadence) * 2); }
+		&:nth-child(4) { animation-delay: calc(var(--cadence) * 3); }
+	}
+
+	h2 {
+		margin-bottom: 1rem;
+		padding-bottom: 0.5rem;
+		font-family: Georgia, 'Times New Roman', serif;
+		font-size: 1.15rem;
+		font-weight: normal;
+		color: $jaune;
+		border-bottom: 1px solid rgba(254, 221, 88, 0.3);
+	}
+
+	p {
+		margin-bottom: 0.9rem;
+		line-height: 1.6;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	dl {
+		margin: 0;
+
+		div {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.35rem 0.75rem;
+			margin-bottom: 0.6rem;
+		}
+	}
+
+	dt {
+		// Même étiquette que sur les fiches d'Histoire.
+		flex: 0 0 12rem;
+		font-size: 0.7rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: rgba(245, 245, 220, 0.45);
+		padding-top: 0.25rem;
+	}
+
+	dd {
+		flex: 1;
+		min-width: 12rem;
+		margin: 0;
+	}
+
+	a {
+		color: $jaune;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(254, 221, 88, 0.4);
+		transition: border-color 0.25s ease;
+
+		&:hover {
+			border-bottom-color: $jaune;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $jaune;
+			outline-offset: 2px;
+		}
+	}
+
+	// Volontairement voyant : ces champs ne doivent pas partir en ligne tels quels.
+	.a-completer {
+		display: inline-block;
+		white-space: nowrap;
+		font-size: 0.8rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: rgb(252, 83, 91);
+		border: 1px dashed rgba(252, 83, 91, 0.6);
+		border-radius: 2px;
+		padding: 0.1rem 0.4rem;
+	}
+
+	@media screen and (max-width: 600px) {
+		dt {
+			flex-basis: 100%;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#legal article {
+		opacity: 1;
+		animation: none;
+	}
+}

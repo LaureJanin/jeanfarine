@@ -5,6 +5,7 @@ import History from "./pages/History";
 import Dramas from "./pages/Dramas";
 import Press from "./pages/Press";
 import Picture from "./components/Picture/Picture";
+import Legal from "./pages/Legal";
 import Error from "./pages/Error";
 
 import "./App.scss"
@@ -20,6 +21,7 @@ function App() {
         <Route path="/dramas" element={<Dramas />} />
         <Route path="/press" element={<Press />} />
         <Route path="/picture" element={<Picture />} />
+        <Route path="/mentions-legales" element={<Legal />} />
         <Route path="/*" element={<Error />} />
       </Routes>
     </>
