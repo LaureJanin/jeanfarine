@@ -6,13 +6,9 @@ function Press() {
   const [expandedDramas, setExpandedDramas] = useState([]);
 
   const toggleDrama = (id) => {
-    if (expandedDramas.includes(id)) {
-      setExpandedDramas(expandedDramas.filter((d) => d !== id));
-    } else {
-      setExpandedDramas([...expandedDramas, id]);
-      if (dramas.find((d) => d.id === id)?.press?.length > 0) {
-      }
-    }
+    setExpandedDramas((prev) =>
+      prev.includes(id) ? prev.filter((d) => d !== id) : [...prev, id]
+    );
   };
 
     return (
@@ -23,10 +19,7 @@ function Press() {
                     <h2 className="titleDrama">
                         {drama.title} de {drama.author}{' '}
                         <span className="arrow" 
-                        onClick={() => {
-                            toggleDrama(drama.id);
-                            handleShowArticles;
-                          }}
+                        onClick={() => toggleDrama(drama.id)}
                         >{expandedDramas.includes(drama.id) ? '▲' : '▼'}</span>
                     </h2>
                     {expandedDramas.includes(drama.id) && (
