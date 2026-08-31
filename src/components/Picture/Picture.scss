@@ -145,13 +145,18 @@ $bande: 1150px;
         }
     }
 
+    // Colonnes plutôt qu'une grille à cellules égales : un cadre 3:2 imposé
+    // amputait les 14 photos en portrait de la moitié à deux tiers de leur
+    // hauteur. Le navigateur équilibre les colonnes tout seul.
     .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
+        columns: 3;
+        column-gap: 1rem;
 
         .photo {
             display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            break-inside: avoid;
             padding: 0;
             border: none;
             background: none;
@@ -164,8 +169,7 @@ $bande: 1150px;
             img {
                 display: block;
                 width: 100%;
-                aspect-ratio: 3 / 2;
-                object-fit: cover;
+                height: auto;
                 transition: transform 0.5s ease, filter 0.4s ease;
             }
 
@@ -184,7 +188,7 @@ $bande: 1150px;
 
     @media screen and (max-width: 900px) {
         .gallery {
-            grid-template-columns: repeat(2, 1fr);
+            columns: 2;
         }
     }
 
@@ -215,7 +219,7 @@ $bande: 1150px;
 
     @media screen and (max-width: 560px) {
         .gallery {
-            grid-template-columns: 1fr;
+            columns: 1;
         }
 
         .apercus {
