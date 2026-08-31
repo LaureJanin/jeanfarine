@@ -42,6 +42,15 @@
     }
   }
 
+  .contact {
+    color: beige;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    // l'adresse mail garde sa casse, contrairement aux autres liens du footer
+    a { text-transform: none; }
+  }
+
   a {
     color: beige;
     font-size:18px;

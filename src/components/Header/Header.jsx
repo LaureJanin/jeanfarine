@@ -52,11 +52,6 @@ function Header() {
               Presse
             </Link>
           </li>
-          <li>
-            <Link data-item="Contact" to="/contact" onClick={handleShowLinks}>
-              Contact
-            </Link>
-          </li>
         </ul>
 
         <div id="HeadDecoration"></div>

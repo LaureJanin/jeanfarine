@@ -10,7 +10,6 @@
     "deploy": "vite build && netlify deploy --prod --dir=dist"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-lottie-player": "^1.5.4",
