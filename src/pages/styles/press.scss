@@ -1,48 +1,217 @@
-$press-children: 14;
+$jaune: #fedd58;
+$beige: beige;
 
 #press {
-    opacity: 0;  
-    .titleDrama {
-        margin-bottom: 2rem;
-        .arrow {
-            color:#fedd58;
-            margin-left: 1rem;
-            cursor: pointer;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem) 4rem;
+    color: $beige;
+
+    .chapeau {
+        max-width: 34rem;
+        margin: 0 auto 3rem;
+        font-size: 0.95rem;
+        font-style: italic;
+        line-height: 1.6;
+        color: rgba(245, 245, 220, 0.6);
+    }
+
+    .revue {
+        list-style: none;
+        border-top: 1px solid rgba(245, 245, 220, 0.15);
+
+        li {
+            border-bottom: 1px solid rgba(245, 245, 220, 0.15);
+            opacity: 0;
+            animation: entreeEnCascade var(--apparition) ease-out forwards;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: inherit;
+            font-weight: normal;
         }
     }
-    .articlePress {
+
+    // Une seule zone cliquable par pièce, et un chevron aligné à droite :
+    // avant, seul le triangle était actif et il flottait après le texte.
+    .entete {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        padding: 1.15rem 0.25rem;
+        font-family: inherit;
+        text-align: left;
+        color: $beige;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: color 0.25s ease;
+
+        &:hover {
+            color: $jaune;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $jaune;
+            outline-offset: 2px;
+        }
+    }
+
+    .intitule {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    .titre {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.15rem;
+    }
+
+    .auteur {
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+        color: rgba(245, 245, 220, 0.5);
+    }
+
+    .compte {
+        flex: 0 0 auto;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(254, 221, 88, 0.75);
+    }
+
+    .chevron {
+        flex: 0 0 1.5rem;
+        text-align: center;
+        font-size: 1.1rem;
+        color: $jaune;
+        transition: transform 0.3s ease;
+    }
+
+    .ouverte .chevron {
+        transform: rotate(180deg);
+    }
+
+    // `grid-template-rows: 0fr → 1fr` est la seule façon d'animer une hauteur
+    // qu'on ne connaît pas à l'avance. `visibility` retire aussi les articles
+    // du parcours de tabulation quand la pièce est fermée.
+    .enveloppe {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .ouverte .enveloppe {
+        grid-template-rows: 1fr;
+    }
+
+    // Aucun padding ici : sur une ligne de grille à `0fr`, il subsisterait et
+    // laisserait le bloc ouvert de sa propre épaisseur.
+    .articles {
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-6px);
+        transition: opacity 0.3s ease, transform 0.4s ease, visibility 0.45s;
+    }
+
+    .ouverte .articles {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.12s;
+    }
+
+    .aide {
+        padding: 0.6rem 0.25rem 0;
+        margin-bottom: 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        text-align: left;
+        color: rgba(245, 245, 220, 0.45);
+    }
+
+    // Hauteur commune, largeur naturelle : les coupures de presse font de 330
+    // à 1177 px de large et étaient toutes étirées à 640 px, donc floues.
+    .etagere {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         align-items: flex-start;
         gap: 1rem;
-        margin-bottom: 2rem;
-        .imagePress {
-            opacity: 0;
-            animation: fadeInPress 0.5s ease-in-out forwards;
-            width: 40rem;
+        padding: 0 0.25rem 2rem;
+    }
+
+    .article {
+        height: 260px;
+        padding: 0;
+        border: 1px solid rgba(245, 245, 220, 0.15);
+        background: rgba(20, 16, 16, 0.6);
+        cursor: zoom-in;
+        overflow: hidden;
+        transition: border-color 0.25s ease;
+
+        img {
+            display: block;
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            filter: brightness(0.9);
+            transition: filter 0.3s ease;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border-color: rgba(254, 221, 88, 0.6);
+
+            img {
+                filter: brightness(1.1);
+            }
+        }
+
+        &:focus-visible {
+            outline: 2px solid $jaune;
+            outline-offset: 2px;
         }
     }
 
     @media screen and (max-width: 650px) {
-        .articlePress {
-            align-items: center;
-            .imagePress {
+        .entete {
+            gap: 0.6rem;
+        }
+
+        .compte {
+            font-size: 0.65rem;
+        }
+
+        .article {
+            height: auto;
+            width: 100%;
+
+            img {
+                height: auto;
                 width: 100%;
             }
-        } 
-    }
-}
-    
-
-@for $i from 1 through $press-children {
-    #press:nth-child(#{$i}) {
-        animation: fadeInPress 0.5s ease-in #{($i - 1) * 0.3s} both;
+        }
     }
 }
 
-@keyframes fadeInPress {
-    to {
-      opacity: 1;
+@media (prefers-reduced-motion: reduce) {
+    #press .revue li {
+        opacity: 1;
+        animation: none;
+    }
+
+    #press .enveloppe,
+    #press .articles,
+    #press .chevron,
+    #press .article,
+    #press .article img {
+        transition: none;
     }
 }
