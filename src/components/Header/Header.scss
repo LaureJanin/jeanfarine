@@ -61,6 +61,20 @@
               transition: all 0.5s ease-in-out;
             }
           }
+          // Page courante : rien ne la signalait, les quatre liens étaient
+          // identiques d'un bout à l'autre du site.
+          &.active {
+            color: #fedd58;
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: -0.45rem;
+              height: 1px;
+              background-color: #fedd58;
+            }
+          }
         }
       }
     }
@@ -164,10 +178,14 @@
       }
     }
     // max-height plutôt qu'une hauteur fixe : le panneau s'adapte au nombre de liens.
+    // visibility retire en plus les liens du parcours clavier : replié, le menu
+    // les masquait à l'œil mais la tabulation les traversait toujours. La
+    // transition sur visibility la laisse à visible tant que le pliage dure.
     nav {
       overflow: hidden;
       max-height: 0;
-      transition: max-height 0.6s ease-in-out;
+      visibility: hidden;
+      transition: max-height 0.6s ease-in-out, visibility 0.6s;
       ul {
         background-color: rgb(49, 52, 52);
         border-radius: 8px;
@@ -189,6 +207,7 @@
     }
     .heightNav {
       max-height: 30rem;
+      visibility: visible;
     }
   }
 }
